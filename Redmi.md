@@ -1,1 +1,0 @@
-Vetrina ufficiale RisparmiTop
