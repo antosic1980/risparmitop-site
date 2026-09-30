@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PrezziSmart - Offerte del momento</title>
+    <title>RisparmiTop - Offerte del momento</title>
 
     <style>
         body {
@@ -91,7 +91,7 @@
 <body>
 
 <header>
-    <h1>🔥 PrezziSmart</h1>
+    <h1>🔥 RisparmiTop</h1>
     <p>Le offerte più interessanti, selezionate per te.</p>
 </header>
 
@@ -109,7 +109,7 @@
 </main>
 
 <footer>
-    © 2026 PrezziSmart
+    © 2026 RisparmiTop
 </footer>
 
 <script>
@@ -118,9 +118,9 @@ function formatDate(dateString) {
     // Interpreta la data come orario italiano
     let date = new Date(dateString);
 
-if (!dateString.includes("Z") && !dateString.includes("+")) {
-    date = new Date(dateString + "Z");
-}
+    if (!dateString.includes("Z") && !dateString.includes("+")) {
+        date = new Date(dateString + "Z");
+    }
 
     const formatted = new Intl.DateTimeFormat("it-IT", {
         timeZone: "Europe/Rome",
@@ -140,6 +140,7 @@ if (!dateString.includes("Z") && !dateString.includes("+")) {
 
     return `${parts.day}/${parts.month}/${parts.year} delle ore ${parts.hour}.${parts.minute}`;
 }
+
 async function loadOffers() {
 
     const response = await fetch(
@@ -184,12 +185,12 @@ async function loadOffers() {
             </p>
 
             <p class="discount">
-    📉 -${discount}%
-</p>
+                📉 -${discount}%
+            </p>
 
-<p>
-    📅 Offerta del ${formatDate(offer.date)}
-</p>
+            <p>
+                📅 Offerta del ${formatDate(offer.date)}
+            </p>
 
             <a
                 class="button"
