@@ -24,18 +24,22 @@
             line-height: 1.7;
         }
 
-        header {
-            background: #111;
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
+        .site-header {
+            width: 100%;
+            background: #0757a8;
+            overflow: hidden;
         }
 
-        header a {
-            color: white;
-            text-decoration: none;
-            font-size: 28px;
-            font-weight: bold;
+        .banner-link {
+            display: block;
+            width: 100%;
+            line-height: 0;
+        }
+
+        .banner-link img {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
         main {
@@ -157,8 +161,19 @@
 
 <body>
 
-<header>
-    <a href="index.html">🔥 RisparmiTop</a>
+<header class="site-header">
+    <a
+        href="index.html"
+        class="banner-link"
+        aria-label="Torna alla home di RisparmiTop"
+    >
+        <img
+            src="immagini/banner-risparmitop.png"
+            alt="RisparmiTop - Le migliori offerte, ogni giorno"
+            width="1536"
+            height="576"
+        >
+    </a>
 </header>
 
 <main>
