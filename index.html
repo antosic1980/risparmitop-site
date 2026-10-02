@@ -6,84 +6,161 @@
 
     <title>RisparmiTop - Offerte del momento</title>
 
+    <meta
+        name="description"
+        content="RisparmiTop: offerte interessanti e consigli pratici per risparmiare meglio, eliminare gli sprechi e spendere con maggiore consapevolezza."
+    >
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+            background: #f5f7f9;
             color: #222;
+            line-height: 1.6;
         }
 
         header {
-            background: #111827;
+            background: #111;
             color: white;
             padding: 35px 20px;
             text-align: center;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 38px;
+            margin: 0 0 10px;
+            font-size: 36px;
         }
 
         header p {
-            margin-top: 10px;
-            color: #d1d5db;
+            margin: 0;
+            font-size: 18px;
         }
 
         main {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
-        .intro {
-            text-align: center;
-            margin-bottom: 30px;
+        .section-intro {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-intro h2 {
+            margin-top: 0;
+        }
+
+        .article-links {
+            display: grid;
+            gap: 15px;
+        }
+
+        .article-link {
+            display: block;
+            background: #f1f3f5;
+            padding: 20px;
+            border-radius: 12px;
+            color: #222;
+            text-decoration: none;
+            transition: transform 0.15s ease;
+        }
+
+        .article-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .article-link h3 {
+            margin: 0 0 8px;
+            font-size: 21px;
+        }
+
+        .article-link p {
+            margin: 0;
+            color: #555;
+        }
+
+        #offers {
+            display: grid;
+            gap: 20px;
         }
 
         .card {
             background: white;
-            border-radius: 12px;
             padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
         }
 
-        .price {
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .old-price {
-            color: #888;
-            text-decoration: line-through;
-        }
-
-        .discount {
-            color: #16a34a;
-            font-weight: bold;
+        .card h2 {
+            margin-top: 0;
+            font-size: 24px;
         }
 
         .category {
             color: #666;
+            font-size: 15px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 17px;
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .discount {
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .button {
             display: inline-block;
             margin-top: 15px;
-            padding: 12px 20px;
-            background: #ff9900;
+            padding: 12px 18px;
+            background: #111;
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            font-weight: bold;
+        }
+
+        .button:hover {
+            opacity: 0.9;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
             color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .card,
+            .section-intro {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -97,27 +174,52 @@
 
 <main>
 
-    <div class="intro">
-        <div style="margin: 25px 0; padding: 20px; background: #f1f3f5; border-radius: 12px;">
-    <h2>💰 Risparmio intelligente</h2>
-    <p>
-        Consigli pratici per gestire meglio le spese, eliminare gli sprechi
-        e usare il denaro con maggiore consapevolezza.
-    </p>
-    <a
-        href="budget-familiare.html"
-        style="display: inline-block; padding: 12px 18px; background: #111; color: white; text-decoration: none; border-radius: 8px;"
-    >
-        👉 Leggi la guida sul budget familiare
-    </a>
-</div>
-        <h2>🛒 Offerte del momento</h2>
-        <p>Scopri le occasioni che abbiamo trovato.</p>
-    </div>
+    <section class="section-intro">
 
-    <div id="offers">
-        <p>Caricamento offerte...</p>
-    </div>
+        <h2>💰 Risparmio intelligente</h2>
+
+        <p>
+            Consigli pratici per gestire meglio le spese, eliminare gli sprechi
+            e usare il denaro con maggiore consapevolezza.
+        </p>
+
+        <div class="article-links">
+
+            <a class="article-link" href="budget-familiare.html">
+                <h3>💰 Come creare un budget familiare senza sentirsi prigionieri dei numeri</h3>
+                <p>
+                    Un metodo semplice per capire dove vanno i soldi,
+                    organizzare le spese e risparmiare senza rinunciare
+                    alla qualità della vita.
+                </p>
+            </a>
+
+            <a class="article-link" href="sprechi-invisibili.html">
+                <h3>🔎 Gli sprechi invisibili: dove finiscono davvero i soldi ogni mese</h3>
+                <p>
+                    Abbonamenti, piccole spese, commissioni e disorganizzazione:
+                    scopri come individuare ciò che pesa sul budget senza aggiungere valore.
+                </p>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>🛒 Offerte del momento</h2>
+
+        <p>
+            Scopri le occasioni che abbiamo trovato.
+        </p>
+
+        <div id="offers">
+            <p>Caricamento offerte...</p>
+        </div>
+
+    </section>
 
 </main>
 
@@ -125,10 +227,11 @@
     © 2026 RisparmiTop
 </footer>
 
+
 <script>
+
 function formatDate(dateString) {
 
-    // Interpreta la data come orario italiano
     let date = new Date(dateString);
 
     if (!dateString.includes("Z") && !dateString.includes("+")) {
@@ -153,6 +256,7 @@ function formatDate(dateString) {
 
     return `${parts.day}/${parts.month}/${parts.year} delle ore ${parts.hour}.${parts.minute}`;
 }
+
 
 async function loadOffers() {
 
@@ -216,8 +320,10 @@ async function loadOffers() {
         `;
 
         container.appendChild(card);
+
     });
 }
+
 
 loadOffers();
 
