@@ -8,5 +8,14 @@
     "category": "Elettronica",
     "description": "Auricolari wireless Sony compatti e leggeri, progettati per offrire un audio di qualità con tecnologia DSEE. Pesano solo 4,6 g per auricolare e offrono fino a 22 ore di autonomia complessiva. Supportano la connessione Multipoint per collegare contemporaneamente due dispositivi. Il design ergonomico li rende adatti anche all'uso durante l'attività fisica.",
     "date": "2026-09-28T00:10:03+02:00"
+  },
+  {
+    "id": "580aae18-990e-4fd2-86c2-30fd2a93ceb4",
+    "name": "TEST RisparmiTop",
+    "old_price": 100.0,
+    "price": 90.0,
+    "category": "Test",
+    "description": "Offerta di prova per verificare il nuovo sistema",
+    "url": "https://www.amazon.it/"
   }
 ]
