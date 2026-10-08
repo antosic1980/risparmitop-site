@@ -17,5 +17,14 @@
     "category": "Test",
     "description": "Offerta di prova per verificare il nuovo sistema",
     "url": "https://www.amazon.it/"
+  },
+  {
+    "id": "de572849-4590-43e2-9b82-73d4caffb5f5",
+    "name": "TEST RisparmiTop",
+    "old_price": 100.0,
+    "price": 90.0,
+    "category": "Test",
+    "description": "Offerta di prova",
+    "url": "https://www.amazon.it/"
   }
 ]
