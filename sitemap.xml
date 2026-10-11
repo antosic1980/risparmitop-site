@@ -1,32 +1,13 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://risparmitop.it/</loc>
-    </url>
-
-<url>
-    <loc>https://risparmitop.it/offerta-amazon-vera-convenienza.html</loc>
-</url>
-
-    <url>
-        <loc>https://risparmitop.it/assicurazione-auto-risparmiare.html</loc>
-    </url>
-
-    <url>
-        <loc>https://risparmitop.it/bbva-conto-corrente.html</loc>
-    </url>
-loc>https://risparmitop.it/imu-affitto-stanze-abitazione-principale.html</loc>
-    <url>
-        <loc>https://risparmitop.it/bollo-auto-2027.html</loc>
-    </url>
-
-    <url>
-        <loc>https://risparmitop.it/sprechi-invisibili.html</loc>
-    </url>
-
-    <url>
-        <loc>https://risparmitop.it/budget-familiare.html</loc>
-    </url>
-
+  <url><loc>https://risparmitop.it/</loc></url>
+  <url><loc>https://risparmitop.it/offerta-amazon-vera-convenienza.html</loc></url>
+  <url><loc>https://risparmitop.it/assicurazione-auto-risparmiare.html</loc></url>
+  <url><loc>https://risparmitop.it/bbva-conto-corrente.html</loc></url>
+  <url><loc>https://risparmitop.it/bollo-auto-2027.html</loc></url>
+  <url><loc>https://risparmitop.it/sprechi-invisibili.html</loc></url>
+  <url><loc>https://risparmitop.it/budget-familiare.html</loc></url>
+  <url><loc>https://risparmitop.it/imu-affitto-stanze-abitazione-principale.html</loc></url>
+  <url><loc>https://risparmitop.it/vinted-inviti-voucher.html</loc></url>
 </urlset>
