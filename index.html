@@ -32,6 +32,24 @@
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
         a:hover { color: #2563eb; }
 
+        /* ========================= BANNER IMMAGINE ========================= */
+        .site-header {
+            width: 100%;
+            background: #0757a8;
+            overflow: hidden;
+        }
+        .banner-link {
+            display: block;
+            width: 100%;
+            line-height: 0;
+        }
+        .banner-link img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* ========================= TOP BANNER TESTO ========================= */
         .top-banner {
             background-color: #111827;
             color: #ffffff;
@@ -42,6 +60,7 @@
         }
         .top-banner a { color: #60a5fa; text-decoration: underline; }
 
+        /* ========================= HEADER E MENU ========================= */
         .header {
             display: flex;
             justify-content: space-between;
@@ -213,16 +232,25 @@
 </head>
 <body>
 
+    <!-- BANNER IMMAGINE (il tuo banner personalizzato) -->
+    <header class="site-header">
+        <a href="https://risparmitop.it/" class="banner-link" aria-label="Torna alla home di RisparmiTop">
+            <img src="immagini/banner-risparmitop.png" alt="RisparmiTop - Le migliori offerte, ogni giorno" width="1536" height="576">
+        </a>
+    </header>
+
+    <!-- TOP BANNER TESTO -->
     <div class="top-banner">
         📲 Non perdere le offerte lampo: <a href="https://t.me/risparmitop">Unisciti al canale Telegram</a>
     </div>
 
+    <!-- HEADER CON MENU -->
     <header class="header">
         <a href="#" onclick="switchView('offerte'); return false;" class="logo">Risparmi<span>Top</span></a>
         <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
         
         <nav class="dropdown-menu" id="dropdownMenu">
-            <a onclick="switchView('offerte')"> Migliori Offerte</a>
+            <a onclick="switchView('offerte')">🔥 Migliori Offerte</a>
             <a onclick="switchView('blog')">📝 Blog e Guide</a>
             <a onclick="switchView('contatti')">📧 Contatti</a>
             <a href="https://t.me/risparmitop" target="_blank">📲 Canale Telegram</a>
@@ -250,10 +278,9 @@
         <!-- VISTA BLOG -->
         <section id="view-blog" class="view-section">
             <div class="section-header">
-                <h2>📝 Blog e Guide</h2>
+                <h2> Blog e Guide</h2>
             </div>
             
-            <!-- Filtri per categoria -->
             <div class="blog-filters" id="blog-filters">
                 <button class="filter-btn active" onclick="filterBlog('tutti')">Tutti</button>
                 <button class="filter-btn" onclick="filterBlog('Guide Pratiche')">Guide Pratiche</button>
@@ -264,9 +291,7 @@
                 <button class="filter-btn" onclick="filterBlog('App e Servizi')">App e Servizi</button>
             </div>
 
-            <div id="blog-grid" class="blog-grid">
-                <!-- Gli articoli vengono caricati qui dinamicamente -->
-            </div>
+            <div id="blog-grid" class="blog-grid"></div>
         </section>
 
         <!-- VISTA CONTATTI -->
@@ -298,7 +323,6 @@
     <script>
         // =========================
         // ELENCO ARTICOLI DEL BLOG
-        // Per aggiungere un nuovo articolo, aggiungi un oggetto qui sotto
         // =========================
         const blogArticles = [
             {
@@ -330,7 +354,7 @@
                 title: "Budget familiare: come organizzarlo e risparmiare",
                 description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.",
                 category: "Finanza Personale",
-                icon: "‍👩‍👧",
+                icon: "👨‍👩‍👧",
                 link: "budget-familiare.html"
             },
             {
@@ -376,7 +400,7 @@
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
-            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '☰';
+            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '';
         });
         
         document.addEventListener('click', (e) => {
@@ -401,8 +425,6 @@
         // =========================
         // RENDERIZZAZIONE BLOG
         // =========================
-        let currentFilter = 'tutti';
-
         function renderBlogArticles(filter = 'tutti') {
             const container = document.getElementById('blog-grid');
             container.innerHTML = '';
@@ -435,16 +457,12 @@
         }
 
         function filterBlog(category) {
-            currentFilter = category;
-            
-            // Aggiorna i bottoni attivi
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.textContent.includes(category) || (category === 'tutti' && btn.textContent === 'Tutti')) {
                     btn.classList.add('active');
                 }
             });
-
             renderBlogArticles(category);
         }
 
@@ -463,7 +481,6 @@
                 
                 allOffers = await response.json();
                 
-                // Ordina per timestamp (più recenti prima)
                 if (allOffers[0] && allOffers[0].timestamp) {
                     allOffers.sort((a, b) => b.timestamp - a.timestamp);
                 }
@@ -504,7 +521,7 @@
                             <span class="old-price">€${offer.old_price.toFixed(2)}</span>
                         </div>
                         <p class="card-description">${offer.description}</p>
-                        <a href="${offer.url}" target="_blank" rel="noopener noreferrer" class="offer-btn">👉 Vedi l'offerta</a>
+                        <a href="${offer.url}" target="_blank" rel="noopener noreferrer" class="offer-btn"> Vedi l'offerta</a>
                     </div>
                 `;
                 container.appendChild(card);
