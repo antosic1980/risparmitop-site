@@ -124,16 +124,14 @@
         .filter-btn:hover { background: #f3f4f6; }
         .filter-btn.active { background: #111827; color: #ffffff; border-color: #111827; }
 
+        /* ========================= GRIGLIE (2 colonne su mobile, 3 su PC) ========================= */
         .offers-grid, .blog-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        @media (min-width: 640px) {
-            .offers-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
         @media (min-width: 1024px) {
-            .offers-grid, .blog-grid { grid-template-columns: repeat(3, 1fr); }
+            .offers-grid, .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
         }
 
         .offer-card, .blog-card {
@@ -228,11 +226,30 @@
             .container { padding: 30px 20px 60px; }
             .section-header h2 { font-size: 26px; }
         }
+
+        /* ========================= CARD COMPATTE SU SMARTPHONE ========================= */
+        @media (max-width: 639px) {
+            .card-image-wrapper { height: 130px; padding: 12px; }
+            .card-body { padding: 12px; }
+            .card-title { font-size: 13px; margin-bottom: 8px; }
+            .new-price { font-size: 20px; }
+            .old-price { font-size: 12px; }
+            .card-description { font-size: 11px; -webkit-line-clamp: 2; margin-bottom: 10px; }
+            .offer-btn { font-size: 13px; padding: 10px; }
+            .discount-badge { font-size: 12px; padding: 4px 8px; top: 8px; left: 8px; }
+            .store-tag { font-size: 10px; padding: 3px 6px; }
+            
+            .blog-image { height: 120px; font-size: 30px; }
+            .blog-content { padding: 12px; }
+            .blog-card h3 { font-size: 14px; }
+            .blog-card p { font-size: 12px; }
+            .blog-category { font-size: 10px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- BANNER IMMAGINE (il tuo banner personalizzato) -->
+    <!-- BANNER IMMAGINE -->
     <header class="site-header">
         <a href="https://risparmitop.it/" class="banner-link" aria-label="Torna alla home di RisparmiTop">
             <img src="immagini/banner-risparmitop.png" alt="RisparmiTop - Le migliori offerte, ogni giorno" width="1536" height="576">
@@ -241,19 +258,19 @@
 
     <!-- TOP BANNER TESTO -->
     <div class="top-banner">
-        📲 Non perdere le offerte lampo: <a href="https://t.me/risparmitop">Unisciti al canale Telegram</a>
+        📲 Non perdere le offerte lampo: <a href="https://t.me/risparmitop" target="_blank" rel="noopener">Unisciti al canale Telegram</a>
     </div>
 
     <!-- HEADER CON MENU -->
     <header class="header">
         <a href="#" onclick="switchView('offerte'); return false;" class="logo">Risparmi<span>Top</span></a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu"></button>
         
         <nav class="dropdown-menu" id="dropdownMenu">
             <a onclick="switchView('offerte')">🔥 Migliori Offerte</a>
             <a onclick="switchView('blog')">📝 Blog e Guide</a>
             <a onclick="switchView('contatti')">📧 Contatti</a>
-            <a href="https://t.me/risparmitop" target="_blank">📲 Canale Telegram</a>
+            <a href="https://t.me/risparmitop" target="_blank" rel="noopener">📲 Canale Telegram</a>
         </nav>
     </header>
 
@@ -263,7 +280,7 @@
         <section id="view-offerte" class="view-section active">
             <div class="section-header">
                 <h2>🔥 Migliori Offerte</h2>
-                <a href="https://t.me/risparmitop" target="_blank" class="view-all">Vedi tutte su Telegram →</a>
+                <a href="https://t.me/risparmitop" target="_blank" rel="noopener" class="view-all">Vedi tutte su Telegram →</a>
             </div>
             <div id="offers-grid" class="offers-grid">
                 <p style="text-align:center; color:#6b7280; grid-column: 1/-1; padding: 40px;">Caricamento offerte in corso...</p>
@@ -278,7 +295,7 @@
         <!-- VISTA BLOG -->
         <section id="view-blog" class="view-section">
             <div class="section-header">
-                <h2> Blog e Guide</h2>
+                <h2>📝 Blog e Guide</h2>
             </div>
             
             <div class="blog-filters" id="blog-filters">
@@ -354,7 +371,7 @@
                 title: "Budget familiare: come organizzarlo e risparmiare",
                 description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.",
                 category: "Finanza Personale",
-                icon: "👨‍👩‍👧",
+                icon: "👨‍‍👧",
                 link: "budget-familiare.html"
             },
             {
@@ -400,13 +417,13 @@
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
-            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '';
+            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '☰';
         });
         
         document.addEventListener('click', (e) => {
             if (!dropdownMenu.contains(e.target) && e.target !== menuToggle) {
                 dropdownMenu.classList.remove('active');
-                menuToggle.textContent = '☰';
+                menuToggle.textContent = '';
             }
         });
 
