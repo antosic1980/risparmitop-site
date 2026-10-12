@@ -2,31 +2,20 @@
 <html lang="it">
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J8LMRVREH6');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-J8LMRVREH6');
+    </script>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RisparmiTop - Offerte Amazon e risparmio intelligente</title>
-
-    <meta
-        name="description"
-        content="RisparmiTop: offerte interessanti e consigli pratici per risparmiare meglio, eliminare gli sprechi e spendere con maggiore consapevolezza."
-    >
+    <meta name="description" content="RisparmiTop: offerte interessanti e consigli pratici per risparmiare meglio, eliminare gli sprechi e spendere con maggiore consapevolezza.">
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -47,11 +36,9 @@
             color: inherit;
         }
 
-
         /* =========================
            BANNER PRINCIPALE
         ========================= */
-
         .site-header {
             width: 100%;
             background: #0757a8;
@@ -70,22 +57,18 @@
             height: auto;
         }
 
-
         /* =========================
            CONTENITORE
         ========================= */
-
         main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 28px 16px 50px;
         }
 
-
         /* =========================
            HERO
         ========================= */
-
         .hero {
             background: white;
             border-radius: 20px;
@@ -118,11 +101,9 @@
             font-size: 16px;
         }
 
-
         /* =========================
            TELEGRAM
         ========================= */
-
         .telegram-box {
             background: linear-gradient(135deg, #111111, #292929);
             color: white;
@@ -164,11 +145,9 @@
             transform: translateY(-2px);
         }
 
-
         /* =========================
            TITOLI SEZIONE
         ========================= */
-
         .section-heading {
             margin-bottom: 18px;
         }
@@ -184,11 +163,9 @@
             color: #6b7075;
         }
 
-
         /* =========================
            OFFERTE
         ========================= */
-
         #offers {
             display: grid;
             grid-template-columns: 1fr;
@@ -203,44 +180,12 @@
             box-shadow: 0 7px 24px rgba(0, 0, 0, 0.06);
             display: flex;
             flex-direction: column;
-            transition:
-                transform 0.15s ease,
-                box-shadow 0.15s ease;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
 
         .card:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
-        }
-
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .category {
-            display: inline-block;
-            margin: 0;
-            padding: 5px 9px;
-            border-radius: 999px;
-            background: #f0f1f3;
-            color: #555a60;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .discount-badge {
-            display: inline-block;
-            background: #111111;
-            color: white;
-            padding: 5px 9px;
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: bold;
-            white-space: nowrap;
         }
 
         .card h2 {
@@ -295,11 +240,9 @@
             opacity: 0.85;
         }
 
-
         /* =========================
            ARTICOLI
         ========================= */
-
         .articles-section {
             margin-top: 40px;
         }
@@ -335,11 +278,9 @@
             font-size: 14px;
         }
 
-
         /* =========================
            FOOTER
         ========================= */
-
         footer {
             border-top: 1px solid #e1e4e7;
             text-align: center;
@@ -348,13 +289,76 @@
             font-size: 13px;
         }
 
+        /* ==========================================
+           NUOVO CSS PER LE CARD CON IMMAGINE (Passo 4)
+        ========================================== */
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #dc2626; /* Rosso per lo sconto, più visibile */
+            color: white;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            z-index: 2;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .category {
+            display: inline-block;
+            align-self: flex-start;
+            margin: 0 0 8px 0;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: #f0f1f3;
+            color: #555a60;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .savings-text {
+            color: #16a34a; /* Verde per il risparmio */
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
 
         /* =========================
            DESKTOP
         ========================= */
-
         @media (min-width: 700px) {
-
             main {
                 padding: 40px 24px 60px;
             }
@@ -376,300 +380,141 @@
             #offers {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-
         }
 
-
         @media (min-width: 1000px) {
-
             #offers {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+    <header class="site-header">
+        <a href="https://risparmitop.it/" class="banner-link" aria-label="Torna alla home di RisparmiTop">
+            <img src="immagini/banner-risparmitop.png" alt="RisparmiTop - Le migliori offerte, ogni giorno" width="1536" height="576">
+        </a>
+    </header>
 
-<header class="site-header">
+    <main>
+        <section class="hero">
+            <span class="hero-label">💰 RISPARMIO INTELLIGENTE</span>
+            <h2>Spendere meglio, senza rinunciare alla qualità.</h2>
+            <p>Selezioniamo offerte interessanti e condividiamo consigli pratici per aiutarti a valorizzare meglio ogni euro.</p>
+        </section>
 
-    <a
-        href="https://risparmitop.it/"
-        class="banner-link"
-        aria-label="Torna alla home di RisparmiTop"
-    >
+        <section class="telegram-box">
+            <div class="telegram-content">
+                <div>
+                    <h2>📲 Le offerte direttamente su Telegram</h2>
+                    <p>Seguici sul canale RisparmiTop e ricevi le nuove occasioni direttamente sul tuo smartphone.</p>
+                </div>
+                <a class="telegram-button" href="https://t.me/risparmitop" target="_blank" rel="noopener noreferrer">
+                    👉 Vai al canale
+                </a>
+            </div>
+        </section>
 
-        <img
-            src="immagini/banner-risparmitop.png"
-            alt="RisparmiTop - Le migliori offerte, ogni giorno"
-            width="1536"
-            height="576"
-        >
-
-    </a>
-
-</header>
-
-
-<main>
-
-
-    <section class="hero">
-
-        <span class="hero-label">
-            💰 RISPARMIO INTELLIGENTE
-        </span>
-
-        <h2>
-            Spendere meglio, senza rinunciare alla qualità.
-        </h2>
-
-        <p>
-            Selezioniamo offerte interessanti e condividiamo
-            consigli pratici per aiutarti a valorizzare meglio
-            ogni euro.
-        </p>
-
-    </section>
-
-
-    <section class="telegram-box">
-
-        <div class="telegram-content">
-
-            <div>
-
-                <h2>
-                    📲 Le offerte direttamente su Telegram
-                </h2>
-
-                <p>
-                    Seguici sul canale RisparmiTop e ricevi
-                    le nuove occasioni direttamente sul tuo smartphone.
-                </p>
-
+        <section>
+            <div class="section-heading">
+                <h2>🛒 Offerte del momento</h2>
+                <p>Le occasioni che abbiamo trovato e che meritano attenzione.</p>
             </div>
 
-            <a
-                class="telegram-button"
-                href="https://t.me/risparmitop"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                👉 Vai al canale
+            <div id="offers">
+                <p>Caricamento offerte...</p>
+            </div>
+        </section>
+
+        <section class="articles-section">
+            <div class="section-heading">
+                <h2>💡 Guide e consigli per risparmiare</h2>
+                <p>Strategie pratiche per gestire meglio le spese, ridurre gli sprechi e valorizzare il denaro.</p>
+            </div>
+            <a class="article-link" href="guide.html">
+                <h3>Scopri tutte le guide di RisparmiTop →</h3>
+                <p>Assicurazione auto, conto corrente, Vinted, bollo auto, acquisti online e gestione del budget familiare.</p>
             </a>
+        </section>
+    </main>
 
-        </div>
+    <footer>
+        © 2026 RisparmiTop
+    </footer>
 
-    </section>
+    <!-- ==========================================
+         NUOVO JAVASCRIPT AGGIORNATO (Passo 3)
+    ========================================== -->
+    <script>
+        async function loadOffers() {
+            const container = document.getElementById("offers");
+            
+            try {
+                // Aggiungiamo un timestamp per evitare che il browser usi la cache vecchia
+                const response = await fetch("offers.json?t=" + new Date().getTime());
+                
+                if (!response.ok) {
+                    throw new Error("Impossibile caricare le offerte");
+                }
 
+                const offers = await response.json();
+                container.innerHTML = "";
 
-    <section>
+                if (offers.length === 0) {
+                    container.innerHTML = "<p style='text-align:center; color:#6b7075; grid-column: 1/-1;'>Nessuna offerta disponibile al momento. Torna presto!</p>";
+                    return;
+                }
 
-        <div class="section-heading">
+                offers.forEach(offer => {
+                    // Calcolo risparmio in euro
+                    const savings = (offer.old_price - offer.price).toFixed(2);
 
-            <h2>
-                🛒 Offerte del momento
-            </h2>
+                    const card = document.createElement("article");
+                    card.className = "card";
 
-            <p>
-                Le occasioni che abbiamo trovato e che meritano attenzione.
-            </p>
+                    card.innerHTML = `
+                        <div class="card-image-wrapper">
+                            <img src="${offer.image}" alt="${offer.name}" class="card-image" loading="lazy">
+                            <span class="discount-badge">-${offer.discount}%</span>
+                        </div>
 
-        </div>
+                        <div class="card-body">
+                            <span class="category">${offer.category}</span>
+                            
+                            <h2>${offer.name}</h2>
+                            
+                            <p class="description">${offer.description}</p>
+                            
+                            <div class="price-area">
+                                <div class="old-price">€${offer.old_price.toFixed(2)}</div>
+                                <div class="price">€${offer.price.toFixed(2)}</div>
+                                <div class="savings-text">Risparmi €${savings}</div>
+                            </div>
 
+                            <p class="date">📅 ${offer.formatted_date}</p>
 
-        <div id="offers">
+                            <a class="offer-button" href="${offer.url}" target="_blank" rel="noopener noreferrer">
+                                👉 Vedi l'offerta su Amazon
+                            </a>
+                        </div>
+                    `;
 
-            <p>
-                Caricamento offerte...
-            </p>
+                    container.appendChild(card);
+                });
 
-        </div>
-
-    </section>
-
-
-<section class="articles-section">
-    <div class="section-heading">
-        <h2>💡 Guide e consigli per risparmiare</h2>
-        <p>
-            Strategie pratiche per gestire meglio le spese,
-            ridurre gli sprechi e valorizzare il denaro.
-        </p>
-    </div>
-
-    <a
-        class="article-link"
-        href="guide.html"
-    >
-        <h3>Scopri tutte le guide di RisparmiTop →</h3>
-        <p>
-            Assicurazione auto, conto corrente, Vinted,
-            bollo auto, acquisti online e gestione del budget familiare.
-        </p>
-    </a>
-</section>
-
-
-</main>
-
-
-<footer>
-
-    © 2026 RisparmiTop
-
-</footer>
-
-
-<script>
-
-
-function formatDate(dateString) {
-
-    let date = new Date(dateString);
-
-    if (
-        !dateString.includes("Z") &&
-        !dateString.includes("+")
-    ) {
-        date = new Date(dateString + "Z");
-    }
-
-    const formatted = new Intl.DateTimeFormat(
-        "it-IT",
-        {
-            timeZone: "Europe/Rome",
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false
-        }
-    ).formatToParts(date);
-
-
-    const parts = {};
-
-    formatted.forEach(part => {
-        parts[part.type] = part.value;
-    });
-
-
-    return `${parts.day}/${parts.month}/${parts.year} delle ore ${parts.hour}.${parts.minute}`;
-}
-
-
-
-async function loadOffers() {
-
-    const response = await fetch(
-        "offers.json"
-    );
-
-
-    const offers = await response.json();
-
-    const container = document.getElementById("offers");
-
-    container.innerHTML = "";
-
-
-    offers.forEach(offer => {
-
-        const discount = Math.round(
-            (
-                (offer.old_price - offer.price) /
-                offer.old_price
-            ) * 100
-        );
-
-
-        if (discount < 30) {
-            return;
+            } catch (error) {
+                console.error("Errore caricamento offerte:", error);
+                container.innerHTML = `
+                    <p style='text-align:center; color:#dc2626; grid-column: 1/-1;'>
+                        ⚠️ Impossibile caricare le offerte. Aggiorna la pagina o riprova più tardi.
+                    </p>`;
+            }
         }
 
-
-        const card = document.createElement("article");
-
-        card.className = "card";
-
-
-        card.innerHTML = `
-
-            <div class="card-top">
-
-                <span class="category">
-                    ${offer.category}
-                </span>
-
-                <span class="discount-badge">
-                    -${discount}%
-                </span>
-
-            </div>
-
-
-            <h2>
-                ${offer.name}
-            </h2>
-
-
-            <div class="price-area">
-
-                <div class="old-price">
-                    Prezzo precedente:
-                    €${offer.old_price.toFixed(2)}
-                </div>
-
-                <div class="price">
-                    €${offer.price.toFixed(2)}
-                </div>
-
-            </div>
-
-
-            <p class="description">
-                ${offer.description}
-            </p>
-
-
-            <p class="date">
-                📅 Offerta del ${formatDate(offer.date)}
-            </p>
-
-
-            <a
-                class="offer-button"
-                href="${offer.url}"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                👉 Vedi l'offerta
-            </a>
-
-        `;
-
-
-        container.appendChild(card);
-
-    });
-
-}
-
-
-loadOffers();
-
-
-</script>
-
+        loadOffers();
+    </script>
 
 </body>
-
 </html>
