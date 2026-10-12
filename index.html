@@ -15,13 +15,11 @@
         gtag('config', 'G-J8LMRVREH6');
     </script>
 
-    <!-- Font professionale (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* ========================= RESET E BASE ========================= */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -34,7 +32,6 @@
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
         a:hover { color: #2563eb; }
 
-        /* ========================= TOP BANNER ========================= */
         .top-banner {
             background-color: #111827;
             color: #ffffff;
@@ -42,11 +39,9 @@
             padding: 10px 16px;
             font-size: 13px;
             font-weight: 600;
-            letter-spacing: 0.3px;
         }
         .top-banner a { color: #60a5fa; text-decoration: underline; }
 
-        /* ========================= HEADER E MENU ========================= */
         .header {
             display: flex;
             justify-content: space-between;
@@ -63,7 +58,7 @@
 
         .menu-toggle {
             background: none; border: none; font-size: 26px; cursor: pointer;
-            padding: 4px 8px; color: #111827; transition: transform 0.2s;
+            padding: 4px 8px; color: #111827;
         }
         .menu-toggle:active { transform: scale(0.9); }
 
@@ -84,7 +79,6 @@
         .dropdown-menu a:last-child { border-bottom: none; }
         .dropdown-menu a:hover { background: #f9fafb; color: #2563eb; }
 
-        /* ========================= LAYOUT E VISTE ========================= */
         .container { max-width: 1200px; margin: 0 auto; padding: 24px 16px 60px; }
         .view-section { display: none; }
         .view-section.active { display: block; animation: fadeIn 0.4s ease; }
@@ -97,25 +91,40 @@
         .section-header h2 { font-size: 22px; font-weight: 800; color: #111827; letter-spacing: -0.5px; }
         .view-all { font-size: 14px; font-weight: 600; color: #2563eb; }
 
-        /* ========================= GRIGLIA OFFERTE (RESPONSIVE) ========================= */
-        .offers-grid {
+        /* FILTRI BLOG */
+        .blog-filters {
+            display: flex; gap: 10px; flex-wrap: wrap;
+            margin-bottom: 24px; padding-bottom: 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .filter-btn {
+            background: #ffffff; border: 1px solid #e5e7eb; color: #374151;
+            font-weight: 600; font-size: 13px; padding: 8px 16px; border-radius: 999px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .filter-btn:hover { background: #f3f4f6; }
+        .filter-btn.active { background: #111827; color: #ffffff; border-color: #111827; }
+
+        .offers-grid, .blog-grid {
             display: grid;
-            grid-template-columns: 1fr; /* MOBILE: 1 per riga (leggibile) */
+            grid-template-columns: 1fr;
             gap: 20px;
         }
         @media (min-width: 640px) {
-            .offers-grid { grid-template-columns: repeat(2, 1fr); } /* TABLET: 2 per riga */
+            .offers-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (min-width: 1024px) {
-            .offers-grid { grid-template-columns: repeat(3, 1fr); } /* PC: 3 per riga (come richiesto) */
+            .offers-grid, .blog-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
-        .offer-card {
+        .offer-card, .blog-card {
             background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px;
             overflow: hidden; transition: transform 0.25s, box-shadow 0.25s;
             display: flex; flex-direction: column; height: 100%;
         }
-        .offer-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); border-color: #d1d5db; }
+        .offer-card:hover, .blog-card:hover {
+            transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); border-color: #d1d5db;
+        }
 
         .card-image-wrapper {
             position: relative; height: 200px; background: #ffffff;
@@ -130,36 +139,41 @@
             padding: 6px 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
         }
 
-        .card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+        .card-body, .blog-content { padding: 18px; flex: 1; display: flex; flex-direction: column; }
         
-        .store-tag {
-            display: inline-flex; align-items: center; background: #f3f4f6; color: #374151;
+        .store-tag, .blog-category {
+            display: inline-flex; align-items: center;
             font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px;
             margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content;
         }
+        .store-tag { background: #f3f4f6; color: #374151; }
+        .blog-category { background: #eff6ff; color: #2563eb; }
 
-        .card-title {
+        .card-title, .blog-card h3 {
             font-size: 16px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; color: #111827;
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
         }
+        .blog-card h3 { font-size: 18px; -webkit-line-clamp: 3; margin-bottom: 10px; }
 
         .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
         .new-price { font-size: 26px; font-weight: 800; color: #111827; }
         .old-price { font-size: 14px; color: #9ca3af; text-decoration: line-through; }
 
-        .card-description {
+        .card-description, .blog-card p {
             font-size: 13px; color: #6b7280; margin-bottom: 16px; flex: 1;
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;
         }
+        .blog-card p { font-size: 14px; -webkit-line-clamp: 3; line-height: 1.6; }
 
-        .offer-btn {
+        .offer-btn, .read-more {
             display: block; text-align: center; background: #111827; color: #ffffff;
             font-weight: 700; font-size: 15px; padding: 14px; border-radius: 10px;
             transition: background 0.2s, transform 0.1s; margin-top: auto;
         }
-        .offer-btn:hover { background: #2563eb; color: #ffffff; transform: translateY(-1px); }
+        .offer-btn:hover, .read-more:hover { background: #2563eb; color: #ffffff; transform: translateY(-1px); }
+        .read-more { background: transparent; color: #2563eb; padding: 0; text-align: left; font-size: 14px; }
+        .read-more:hover { background: transparent; color: #2563eb; transform: none; }
 
-        /* PULSANTE CARICA ALTRO */
         .load-more-container { text-align: center; margin-top: 40px; }
         .load-more-btn {
             background: #ffffff; border: 2px solid #e5e7eb; color: #111827;
@@ -167,33 +181,14 @@
             cursor: pointer; transition: all 0.2s; width: 100%; max-width: 400px;
         }
         .load-more-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
-        .load-more-btn:active { transform: scale(0.98); }
 
-        /* ========================= BLOG ========================= */
-        .blog-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-        @media (min-width: 640px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
-
-        .blog-card {
-            background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px;
-            overflow: hidden; transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); }
         .blog-image {
-            height: 180px; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 40px;
+            height: 180px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: flex; align-items: center; justify-content: center;
+            color: #6b7280; font-size: 40px;
         }
-        .blog-content { padding: 20px; }
-        .blog-category {
-            display: inline-block; font-size: 11px; font-weight: 700; color: #2563eb;
-            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
-        }
-        .blog-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; color: #111827; }
-        .blog-card p { font-size: 14px; color: #6b7280; margin-bottom: 16px; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .read-more { font-size: 14px; font-weight: 700; color: #2563eb; display: inline-flex; align-items: center; gap: 4px; }
-        .read-more:hover { gap: 8px; }
 
-        /* ========================= CONTATTI ========================= */
         .contact-box {
             text-align: center; padding: 50px 20px; background: #ffffff;
             border-radius: 16px; border: 1px solid #e5e7eb;
@@ -201,7 +196,6 @@
         .contact-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
         .contact-box p { color: #6b7280; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-        /* ========================= FOOTER ========================= */
         footer {
             background: #ffffff; border-top: 1px solid #e5e7eb;
             padding: 40px 20px; text-align: center; font-size: 13px; color: #6b7280; margin-top: 60px;
@@ -211,11 +205,9 @@
         .footer-links a:hover { color: #2563eb; }
         .affiliate-disclaimer { max-width: 700px; margin: 0 auto; line-height: 1.6; color: #9ca3af; }
 
-        /* ========================= DESKTOP TWEAKS ========================= */
         @media (min-width: 1024px) {
             .container { padding: 30px 20px 60px; }
             .section-header h2 { font-size: 26px; }
-            .card-image-wrapper { height: 220px; }
         }
     </style>
 </head>
@@ -230,7 +222,7 @@
         <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
         
         <nav class="dropdown-menu" id="dropdownMenu">
-            <a onclick="switchView('offerte')">🔥 Migliori Offerte</a>
+            <a onclick="switchView('offerte')"> Migliori Offerte</a>
             <a onclick="switchView('blog')">📝 Blog e Guide</a>
             <a onclick="switchView('contatti')">📧 Contatti</a>
             <a href="https://t.me/risparmitop" target="_blank">📲 Canale Telegram</a>
@@ -239,17 +231,15 @@
 
     <main class="container">
         
-        <!-- VISTA 1: OFFERTE -->
+        <!-- VISTA OFFERTE -->
         <section id="view-offerte" class="view-section active">
             <div class="section-header">
                 <h2>🔥 Migliori Offerte</h2>
                 <a href="https://t.me/risparmitop" target="_blank" class="view-all">Vedi tutte su Telegram →</a>
             </div>
-            
             <div id="offers-grid" class="offers-grid">
-                <p style="text-align:center; color:#6b7280; grid-column: 1/-1; padding: 40px; font-weight: 500;">Caricamento offerte in corso...</p>
+                <p style="text-align:center; color:#6b7280; grid-column: 1/-1; padding: 40px;">Caricamento offerte in corso...</p>
             </div>
-
             <div class="load-more-container">
                 <button id="load-more-btn" class="load-more-btn" style="display: none;" onclick="loadMoreOffers()">
                     Carica altre 60 offerte ↓
@@ -257,49 +247,29 @@
             </div>
         </section>
 
-        <!-- VISTA 2: BLOG -->
+        <!-- VISTA BLOG -->
         <section id="view-blog" class="view-section">
             <div class="section-header">
                 <h2>📝 Blog e Guide</h2>
             </div>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <a href="guida-spesa.html">
-                        <div class="blog-image">🛒</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Guide Pratiche</span>
-                            <h3>Come risparmiare sulla spesa online nel 2026</h3>
-                            <p>Scopri i trucchi, i comparatori di prezzo e le strategie per ottenere sempre il prezzo più basso su Amazon e altri e-commerce affidabili.</p>
-                            <span class="read-more">Leggi tutto →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="blog-card">
-                    <a href="guida-conti.html">
-                        <div class="blog-image">💳</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Finanza Personale</span>
-                            <h3>Migliori conti correnti online a zero spese</h3>
-                            <p>Analizziamo pro e contro dei principali conti correnti digitali disponibili in Italia, con bonus di benvenuto e carte di debito gratuite.</p>
-                            <span class="read-more">Leggi tutto →</span>
-                        </div>
-                    </a>
-                </article>
-                <article class="blog-card">
-                    <a href="guida-viaggi.html">
-                        <div class="blog-image">✈️</div>
-                        <div class="blog-content">
-                            <span class="blog-category">Viaggi e Tempo Libero</span>
-                            <h3>Palermo in 4 giorni: itinerario completo</h3>
-                            <p>Un viaggio tra mercati storici, chiese barocche, spiagge di Mondello e il miglior street food della città, spendendo il giusto.</p>
-                            <span class="read-more">Leggi tutto →</span>
-                        </div>
-                    </a>
-                </article>
+            
+            <!-- Filtri per categoria -->
+            <div class="blog-filters" id="blog-filters">
+                <button class="filter-btn active" onclick="filterBlog('tutti')">Tutti</button>
+                <button class="filter-btn" onclick="filterBlog('Guide Pratiche')">Guide Pratiche</button>
+                <button class="filter-btn" onclick="filterBlog('Finanza Personale')">Finanza</button>
+                <button class="filter-btn" onclick="filterBlog('Casa e Tasse')">Casa e Tasse</button>
+                <button class="filter-btn" onclick="filterBlog('Auto e Trasporti')">Auto</button>
+                <button class="filter-btn" onclick="filterBlog('Risparmio')">Risparmio</button>
+                <button class="filter-btn" onclick="filterBlog('App e Servizi')">App e Servizi</button>
+            </div>
+
+            <div id="blog-grid" class="blog-grid">
+                <!-- Gli articoli vengono caricati qui dinamicamente -->
             </div>
         </section>
 
-        <!-- VISTA 3: CONTATTI -->
+        <!-- VISTA CONTATTI -->
         <section id="view-contatti" class="view-section">
             <div class="contact-box">
                 <h2>📧 Contattaci</h2>
@@ -326,14 +296,89 @@
     </footer>
 
     <script>
-        // 1. Gestione Menu
+        // =========================
+        // ELENCO ARTICOLI DEL BLOG
+        // Per aggiungere un nuovo articolo, aggiungi un oggetto qui sotto
+        // =========================
+        const blogArticles = [
+            {
+                id: 1,
+                title: "Come risparmiare sull'assicurazione auto",
+                description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.",
+                category: "Guide Pratiche",
+                icon: "🚗",
+                link: "assicurazione-auto-risparmiare.html"
+            },
+            {
+                id: 2,
+                title: "BBVA conto corrente: pro, contro e bonus",
+                description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.",
+                category: "Finanza Personale",
+                icon: "💳",
+                link: "bbva-conto-corrente.html"
+            },
+            {
+                id: 3,
+                title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno",
+                description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.",
+                category: "Auto e Trasporti",
+                icon: "🚙",
+                link: "bollo-auto-2027.html"
+            },
+            {
+                id: 4,
+                title: "Budget familiare: come organizzarlo e risparmiare",
+                description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.",
+                category: "Finanza Personale",
+                icon: "‍👩‍👧",
+                link: "budget-familiare.html"
+            },
+            {
+                id: 5,
+                title: "IMU su affitto stanze: guida completa",
+                description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.",
+                category: "Casa e Tasse",
+                icon: "🏠",
+                link: "imu-affitto-stanze-abitazione-principale.html"
+            },
+            {
+                id: 6,
+                title: "Offerte Amazon: come riconoscere la vera convenienza",
+                description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.",
+                category: "Guide Pratiche",
+                icon: "📦",
+                link: "offerta-amazon-vera-convenienza.html"
+            },
+            {
+                id: 7,
+                title: "Sprechi invisibili: come eliminarli dalla tua vita",
+                description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.",
+                category: "Risparmio",
+                icon: "♻️",
+                link: "sprechi-invisibili.html"
+            },
+            {
+                id: 8,
+                title: "Vinted: come guadagnare con inviti e voucher",
+                description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.",
+                category: "App e Servizi",
+                icon: "👕",
+                link: "vinted-inviti-voucher.html"
+            }
+        ];
+
+        // =========================
+        // MENU A TENDINA
+        // =========================
         const menuToggle = document.getElementById('menuToggle');
         const dropdownMenu = document.getElementById('dropdownMenu');
+        
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
             menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '☰';
         });
+        
         document.addEventListener('click', (e) => {
             if (!dropdownMenu.contains(e.target) && e.target !== menuToggle) {
                 dropdownMenu.classList.remove('active');
@@ -341,7 +386,9 @@
             }
         });
 
-        // 2. Cambio Vista
+        // =========================
+        // CAMBIO VISTA
+        // =========================
         function switchView(viewName) {
             document.querySelectorAll('.view-section').forEach(section => section.classList.remove('active'));
             const targetView = document.getElementById('view-' + viewName);
@@ -351,7 +398,59 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 3. SISTEMA DI PAGINAZIONE OFFERTE
+        // =========================
+        // RENDERIZZAZIONE BLOG
+        // =========================
+        let currentFilter = 'tutti';
+
+        function renderBlogArticles(filter = 'tutti') {
+            const container = document.getElementById('blog-grid');
+            container.innerHTML = '';
+
+            const filtered = filter === 'tutti' 
+                ? blogArticles 
+                : blogArticles.filter(article => article.category === filter);
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:#6b7280; grid-column: 1/-1; padding: 40px;">Nessun articolo in questa categoria.</p>';
+                return;
+            }
+
+            filtered.forEach(article => {
+                const card = document.createElement('article');
+                card.className = 'blog-card';
+                card.innerHTML = `
+                    <a href="${article.link}">
+                        <div class="blog-image">${article.icon}</div>
+                        <div class="blog-content">
+                            <span class="blog-category">${article.category}</span>
+                            <h3>${article.title}</h3>
+                            <p>${article.description}</p>
+                            <span class="read-more">Leggi tutto →</span>
+                        </div>
+                    </a>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterBlog(category) {
+            currentFilter = category;
+            
+            // Aggiorna i bottoni attivi
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(category) || (category === 'tutti' && btn.textContent === 'Tutti')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            renderBlogArticles(category);
+        }
+
+        // =========================
+        // SISTEMA OFFERTE CON PAGINAZIONE
+        // =========================
         let allOffers = [];
         const itemsPerPage = 60;
         let currentPage = 1;
@@ -364,11 +463,12 @@
                 
                 allOffers = await response.json();
                 
-                // ORDINAMENTO INFALLIBILE: Le più recenti (timestamp più alto) vanno per prime
-                allOffers.sort((a, b) => b.timestamp - a.timestamp);
+                // Ordina per timestamp (più recenti prima)
+                if (allOffers[0] && allOffers[0].timestamp) {
+                    allOffers.sort((a, b) => b.timestamp - a.timestamp);
+                }
 
                 renderOffersPage(1);
-
             } catch (error) {
                 console.error("Errore:", error);
                 container.innerHTML = `<p style='text-align:center; color:#dc2626; grid-column: 1/-1; padding: 40px;'>⚠️ Impossibile caricare le offerte. Aggiorna la pagina.</p>`;
@@ -381,17 +481,13 @@
             const end = start + itemsPerPage;
             const pageOffers = allOffers.slice(start, end);
 
-            // Se è la prima pagina, svuota il contenitore (rimuove il "caricamento...")
-            if (page === 1) {
-                container.innerHTML = "";
-            }
+            if (page === 1) container.innerHTML = "";
 
             if (pageOffers.length === 0 && page === 1) {
                 container.innerHTML = "<p style='text-align:center; color:#6b7280; grid-column: 1/-1; padding: 40px;'>Nessuna offerta disponibile al momento.</p>";
                 return;
             }
 
-            // Genera le card per questa pagina
             pageOffers.forEach(offer => {
                 const card = document.createElement("article");
                 card.className = "offer-card";
@@ -414,10 +510,9 @@
                 container.appendChild(card);
             });
 
-            // Mostra o nascondi il pulsante "Carica altre"
             const loadMoreBtn = document.getElementById("load-more-btn");
             if (end >= allOffers.length) {
-                loadMoreBtn.style.display = "none"; // Tutte le offerte sono state caricate
+                loadMoreBtn.style.display = "none";
             } else {
                 loadMoreBtn.style.display = "block";
                 loadMoreBtn.textContent = `Carica altre ${Math.min(itemsPerPage, allOffers.length - end)} offerte ↓`;
@@ -427,16 +522,17 @@
         function loadMoreOffers() {
             currentPage++;
             renderOffersPage(currentPage);
-            // Scroll morbido verso l'inizio delle nuove card
             const newCards = document.querySelectorAll('.offer-card');
-            if(newCards.length > itemsPerPage) {
-                const firstNewCard = newCards[itemsPerPage];
-                firstNewCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (newCards.length > itemsPerPage) {
+                newCards[itemsPerPage].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
-        // Avvio
+        // =========================
+        // AVVIO
+        // =========================
         loadOffers();
+        renderBlogArticles('tutti');
     </script>
 </body>
 </html>
