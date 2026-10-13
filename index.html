@@ -101,7 +101,12 @@
         .load-more-btn { background: #ffffff; border: 2px solid #e5e7eb; color: #111827; font-weight: 700; font-size: 16px; padding: 16px 32px; border-radius: 999px; cursor: pointer; transition: all 0.2s; width: 100%; max-width: 400px; }
         .load-more-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
 
-        .blog-image { height: 180px; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 40px; }
+        .blog-image-real {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #f3f4f6;
+        }
 
         .contact-box { text-align: center; padding: 50px 20px; background: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; }
         .contact-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
@@ -125,7 +130,7 @@
             .offer-btn { font-size: 13px; padding: 10px; }
             .discount-badge { font-size: 12px; padding: 4px 8px; top: 8px; left: 8px; }
             .store-tag { font-size: 10px; padding: 3px 6px; }
-            .blog-image { height: 120px; font-size: 30px; }
+            .blog-image-real { height: 130px; }
             .blog-content { padding: 12px; }
             .blog-card h3 { font-size: 14px; }
             .blog-card p { font-size: 12px; }
@@ -137,7 +142,14 @@
 
     <header class="site-header">
         <a href="https://risparmitop.it/" class="banner-link" aria-label="Torna alla home di RisparmiTop">
-            <img src="immagini/banner-risparmitop.png" alt="RisparmiTop - Le migliori offerte, ogni giorno" width="1536" height="576">
+            <img 
+                src="immagini/banner-risparmitop.jpg" 
+                alt="RisparmiTop - Le migliori offerte, ogni giorno" 
+                width="1200" 
+                height="450"
+                fetchpriority="high"
+                style="max-width: 100%; height: auto;"
+            >
         </a>
     </header>
 
@@ -147,7 +159,7 @@
 
     <header class="header">
         <a href="#" onclick="switchView('offerte'); return false;" class="logo">Risparmi<span>Top</span></a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu"></button>
         
         <nav class="dropdown-menu" id="dropdownMenu">
             <a onclick="switchView('offerte')">🔥 Migliori Offerte</a>
@@ -175,7 +187,7 @@
 
         <section id="view-blog" class="view-section">
             <div class="section-header">
-                <h2>📝 Blog e Guide</h2>
+                <h2> Blog e Guide</h2>
             </div>
             <div class="blog-filters" id="blog-filters">
                 <button class="filter-btn active" onclick="filterBlog('tutti')">Tutti</button>
@@ -215,14 +227,70 @@
 
     <script>
         const blogArticles = [
-            { id: 1, title: "Come risparmiare sull'assicurazione auto", description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.", category: "Guide Pratiche", icon: "🚗", link: "assicurazione-auto-risparmiare.html" },
-            { id: 2, title: "BBVA conto corrente: pro, contro e bonus", description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.", category: "Finanza Personale", icon: "💳", link: "bbva-conto-corrente.html" },
-            { id: 3, title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno", description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.", category: "Auto e Trasporti", icon: "🚙", link: "bollo-auto-2027.html" },
-            { id: 4, title: "Budget familiare: come organizzarlo e risparmiare", description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.", category: "Finanza Personale", icon: "👨‍👩‍👧", link: "budget-familiare.html" },
-            { id: 5, title: "IMU su affitto stanze: guida completa", description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.", category: "Casa e Tasse", icon: "🏠", link: "imu-affitto-stanze-abitazione-principale.html" },
-            { id: 6, title: "Offerte Amazon: come riconoscere la vera convenienza", description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.", category: "Guide Pratiche", icon: "📦", link: "offerta-amazon-vera-convenienza.html" },
-            { id: 7, title: "Sprechi invisibili: come eliminarli dalla tua vita", description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.", category: "Risparmio", icon: "♻️", link: "sprechi-invisibili.html" },
-            { id: 8, title: "Vinted: come guadagnare con inviti e voucher", description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.", category: "App e Servizi", icon: "👕", link: "vinted-inviti-voucher.html" }
+            {
+                id: 6,
+                title: "Offerte Amazon: come riconoscere la vera convenienza",
+                description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.",
+                category: "Guide Pratiche",
+                image: "immagini/offerte-amazon-convenienza.jpg",
+                link: "offerta-amazon-vera-convenienza.html"
+            },
+            {
+                id: 8,
+                title: "Vinted: come guadagnare con inviti e voucher",
+                description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.",
+                category: "App e Servizi",
+                image: "immagini/vinted-inviti-voucher.jpg",
+                link: "vinted-inviti-voucher.html"
+            },
+            {
+                id: 1,
+                title: "Come risparmiare sull'assicurazione auto",
+                description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.",
+                category: "Guide Pratiche",
+                image: "immagini/assicurazione-auto.jpg",
+                link: "assicurazione-auto-risparmiare.html"
+            },
+            {
+                id: 2,
+                title: "BBVA conto corrente: pro, contro e bonus",
+                description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.",
+                category: "Finanza Personale",
+                image: "immagini/conto-bbva-bonus.jpg",
+                link: "bbva-conto-corrente.html"
+            },
+            {
+                id: 3,
+                title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno",
+                description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.",
+                category: "Auto e Trasporti",
+                image: "immagini/bollo-auto-2027.jpg",
+                link: "bollo-auto-2027.html"
+            },
+            {
+                id: 4,
+                title: "Budget familiare: come organizzarlo e risparmiare",
+                description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.",
+                category: "Finanza Personale",
+                image: "immagini/budget-familiare.jpg",
+                link: "budget-familiare.html"
+            },
+            {
+                id: 5,
+                title: "IMU su affitto stanze: guida completa",
+                description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.",
+                category: "Casa e Tasse",
+                image: "immagini/imu-affitto-stanze.jpg",
+                link: "imu-affitto-stanze-abitazione-principale.html"
+            },
+            {
+                id: 7,
+                title: "Sprechi invisibili: come eliminarli dalla tua vita",
+                description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.",
+                category: "Risparmio",
+                image: "immagini/sprechi-invisibili.jpg",
+                link: "sprechi-invisibili.html"
+            }
         ];
 
         const menuToggle = document.getElementById('menuToggle');
@@ -265,7 +333,7 @@
                 card.className = 'blog-card';
                 card.innerHTML = `
                     <a href="${article.link}">
-                        <div class="blog-image">${article.icon}</div>
+                        <img src="${article.image}" alt="${article.title}" class="blog-image-real" loading="lazy">
                         <div class="blog-content">
                             <span class="blog-category">${article.category}</span>
                             <h3>${article.title}</h3>
@@ -328,7 +396,6 @@
                 const card = document.createElement("article");
                 card.className = "offer-card";
                 
-                // 🔥 SALVAGENTE: Se discount manca, lo calcola al volo!
                 const discountValue = offer.discount !== undefined ? offer.discount : Math.round((offer.old_price - offer.price) / offer.old_price * 100);
 
                 card.innerHTML = `
