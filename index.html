@@ -6,7 +6,6 @@
     <title>RisparmiTop - Le migliori offerte e guide per risparmiare</title>
     <meta name="description" content="RisparmiTop: offerte Amazon verificate, sconti esclusivi e guide pratiche per risparmiare meglio ogni giorno.">
     
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -32,69 +31,23 @@
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
         a:hover { color: #2563eb; }
 
-        /* ========================= BANNER IMMAGINE ========================= */
-        .site-header {
-            width: 100%;
-            background: #0757a8;
-            overflow: hidden;
-        }
-        .banner-link {
-            display: block;
-            width: 100%;
-            line-height: 0;
-        }
-        .banner-link img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+        .site-header { width: 100%; background: #0757a8; overflow: hidden; }
+        .banner-link { display: block; width: 100%; line-height: 0; }
+        .banner-link img { display: block; width: 100%; height: auto; }
 
-        /* ========================= TOP BANNER TESTO ========================= */
-        .top-banner {
-            background-color: #111827;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 16px;
-            font-size: 13px;
-            font-weight: 600;
-        }
+        .top-banner { background-color: #111827; color: #ffffff; text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 600; }
         .top-banner a { color: #60a5fa; text-decoration: underline; }
 
-        /* ========================= HEADER E MENU ========================= */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 20px;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 22px; font-weight: 800; color: #111827; letter-spacing: -0.5px; }
         .logo span { color: #dc2626; }
 
-        .menu-toggle {
-            background: none; border: none; font-size: 26px; cursor: pointer;
-            padding: 4px 8px; color: #111827;
-        }
+        .menu-toggle { background: none; border: none; font-size: 26px; cursor: pointer; padding: 4px 8px; color: #111827; }
         .menu-toggle:active { transform: scale(0.9); }
 
-        .dropdown-menu {
-            position: absolute; top: 100%; right: 20px;
-            background: #ffffff; border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12); border: 1px solid #f3f4f6;
-            display: flex; flex-direction: column; min-width: 240px;
-            opacity: 0; visibility: hidden; transform: translateY(-10px);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden; z-index: 1001;
-        }
+        .dropdown-menu { position: absolute; top: 100%; right: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.12); border: 1px solid #f3f4f6; display: flex; flex-direction: column; min-width: 240px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; z-index: 1001; }
         .dropdown-menu.active { opacity: 1; visibility: visible; transform: translateY(10px); }
-        .dropdown-menu a {
-            padding: 16px 20px; font-weight: 600; font-size: 15px; color: #374151;
-            border-bottom: 1px solid #f9fafb; display: flex; align-items: center; gap: 10px; cursor: pointer;
-        }
+        .dropdown-menu a { padding: 16px 20px; font-weight: 600; font-size: 15px; color: #374151; border-bottom: 1px solid #f9fafb; display: flex; align-items: center; gap: 10px; cursor: pointer; }
         .dropdown-menu a:last-child { border-bottom: none; }
         .dropdown-menu a:hover { background: #f9fafb; color: #2563eb; }
 
@@ -103,131 +56,65 @@
         .view-section.active { display: block; animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .section-header {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;
-        }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #e5e7eb; }
         .section-header h2 { font-size: 22px; font-weight: 800; color: #111827; letter-spacing: -0.5px; }
         .view-all { font-size: 14px; font-weight: 600; color: #2563eb; }
 
-        /* FILTRI BLOG */
-        .blog-filters {
-            display: flex; gap: 10px; flex-wrap: wrap;
-            margin-bottom: 24px; padding-bottom: 16px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .filter-btn {
-            background: #ffffff; border: 1px solid #e5e7eb; color: #374151;
-            font-weight: 600; font-size: 13px; padding: 8px 16px; border-radius: 999px;
-            cursor: pointer; transition: all 0.2s;
-        }
+        .blog-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .filter-btn { background: #ffffff; border: 1px solid #e5e7eb; color: #374151; font-weight: 600; font-size: 13px; padding: 8px 16px; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
         .filter-btn:hover { background: #f3f4f6; }
         .filter-btn.active { background: #111827; color: #ffffff; border-color: #111827; }
 
-        /* ========================= GRIGLIE (2 colonne su mobile, 3 su PC) ========================= */
-        .offers-grid, .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-        @media (min-width: 1024px) {
-            .offers-grid, .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        }
+        .offers-grid, .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        @media (min-width: 1024px) { .offers-grid, .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
 
-        .offer-card, .blog-card {
-            background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px;
-            overflow: hidden; transition: transform 0.25s, box-shadow 0.25s;
-            display: flex; flex-direction: column; height: 100%;
-        }
-        .offer-card:hover, .blog-card:hover {
-            transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); border-color: #d1d5db;
-        }
+        .offer-card, .blog-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; height: 100%; }
+        .offer-card:hover, .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); border-color: #d1d5db; }
 
-        .card-image-wrapper {
-            position: relative; height: 200px; background: #ffffff;
-            display: flex; align-items: center; justify-content: center;
-            padding: 20px; border-bottom: 1px solid #f3f4f6;
-        }
+        .card-image-wrapper { position: relative; height: 200px; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 20px; border-bottom: 1px solid #f3f4f6; }
         .card-image { max-width: 100%; max-height: 100%; object-fit: contain; }
         
-        .discount-badge {
-            position: absolute; top: 12px; left: 12px;
-            background: #dc2626; color: #ffffff; font-weight: 800; font-size: 14px;
-            padding: 6px 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
-        }
+        .discount-badge { position: absolute; top: 12px; left: 12px; background: #dc2626; color: #ffffff; font-weight: 800; font-size: 14px; padding: 6px 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25); }
 
         .card-body, .blog-content { padding: 18px; flex: 1; display: flex; flex-direction: column; }
         
-        .store-tag, .blog-category {
-            display: inline-flex; align-items: center;
-            font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px;
-            margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content;
-        }
+        .store-tag, .blog-category { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content; }
         .store-tag { background: #f3f4f6; color: #374151; }
         .blog-category { background: #eff6ff; color: #2563eb; }
 
-        .card-title, .blog-card h3 {
-            font-size: 16px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; color: #111827;
-            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-        }
+        .card-title, .blog-card h3 { font-size: 16px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .blog-card h3 { font-size: 18px; -webkit-line-clamp: 3; margin-bottom: 10px; }
 
         .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
         .new-price { font-size: 26px; font-weight: 800; color: #111827; }
         .old-price { font-size: 14px; color: #9ca3af; text-decoration: line-through; }
 
-        .card-description, .blog-card p {
-            font-size: 13px; color: #6b7280; margin-bottom: 16px; flex: 1;
-            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;
-        }
+        .card-description, .blog-card p { font-size: 13px; color: #6b7280; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
         .blog-card p { font-size: 14px; -webkit-line-clamp: 3; line-height: 1.6; }
 
-        .offer-btn, .read-more {
-            display: block; text-align: center; background: #111827; color: #ffffff;
-            font-weight: 700; font-size: 15px; padding: 14px; border-radius: 10px;
-            transition: background 0.2s, transform 0.1s; margin-top: auto;
-        }
+        .offer-btn, .read-more { display: block; text-align: center; background: #111827; color: #ffffff; font-weight: 700; font-size: 15px; padding: 14px; border-radius: 10px; transition: background 0.2s, transform 0.1s; margin-top: auto; }
         .offer-btn:hover, .read-more:hover { background: #2563eb; color: #ffffff; transform: translateY(-1px); }
         .read-more { background: transparent; color: #2563eb; padding: 0; text-align: left; font-size: 14px; }
         .read-more:hover { background: transparent; color: #2563eb; transform: none; }
 
         .load-more-container { text-align: center; margin-top: 40px; }
-        .load-more-btn {
-            background: #ffffff; border: 2px solid #e5e7eb; color: #111827;
-            font-weight: 700; font-size: 16px; padding: 16px 32px; border-radius: 999px;
-            cursor: pointer; transition: all 0.2s; width: 100%; max-width: 400px;
-        }
+        .load-more-btn { background: #ffffff; border: 2px solid #e5e7eb; color: #111827; font-weight: 700; font-size: 16px; padding: 16px 32px; border-radius: 999px; cursor: pointer; transition: all 0.2s; width: 100%; max-width: 400px; }
         .load-more-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
 
-        .blog-image {
-            height: 180px;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            display: flex; align-items: center; justify-content: center;
-            color: #6b7280; font-size: 40px;
-        }
+        .blog-image { height: 180px; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 40px; }
 
-        .contact-box {
-            text-align: center; padding: 50px 20px; background: #ffffff;
-            border-radius: 16px; border: 1px solid #e5e7eb;
-        }
+        .contact-box { text-align: center; padding: 50px 20px; background: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; }
         .contact-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
         .contact-box p { color: #6b7280; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-        footer {
-            background: #ffffff; border-top: 1px solid #e5e7eb;
-            padding: 40px 20px; text-align: center; font-size: 13px; color: #6b7280; margin-top: 60px;
-        }
+        footer { background: #ffffff; border-top: 1px solid #e5e7eb; padding: 40px 20px; text-align: center; font-size: 13px; color: #6b7280; margin-top: 60px; }
         .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
         .footer-links a { font-weight: 600; color: #374151; }
         .footer-links a:hover { color: #2563eb; }
         .affiliate-disclaimer { max-width: 700px; margin: 0 auto; line-height: 1.6; color: #9ca3af; }
 
-        @media (min-width: 1024px) {
-            .container { padding: 30px 20px 60px; }
-            .section-header h2 { font-size: 26px; }
-        }
+        @media (min-width: 1024px) { .container { padding: 30px 20px 60px; } .section-header h2 { font-size: 26px; } }
 
-        /* ========================= CARD COMPATTE SU SMARTPHONE ========================= */
         @media (max-width: 639px) {
             .card-image-wrapper { height: 130px; padding: 12px; }
             .card-body { padding: 12px; }
@@ -238,7 +125,6 @@
             .offer-btn { font-size: 13px; padding: 10px; }
             .discount-badge { font-size: 12px; padding: 4px 8px; top: 8px; left: 8px; }
             .store-tag { font-size: 10px; padding: 3px 6px; }
-            
             .blog-image { height: 120px; font-size: 30px; }
             .blog-content { padding: 12px; }
             .blog-card h3 { font-size: 14px; }
@@ -249,22 +135,19 @@
 </head>
 <body>
 
-    <!-- BANNER IMMAGINE -->
     <header class="site-header">
         <a href="https://risparmitop.it/" class="banner-link" aria-label="Torna alla home di RisparmiTop">
             <img src="immagini/banner-risparmitop.png" alt="RisparmiTop - Le migliori offerte, ogni giorno" width="1536" height="576">
         </a>
     </header>
 
-    <!-- TOP BANNER TESTO -->
     <div class="top-banner">
         📲 Non perdere le offerte lampo: <a href="https://t.me/risparmitop" target="_blank" rel="noopener">Unisciti al canale Telegram</a>
     </div>
 
-    <!-- HEADER CON MENU -->
     <header class="header">
         <a href="#" onclick="switchView('offerte'); return false;" class="logo">Risparmi<span>Top</span></a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu"></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
         
         <nav class="dropdown-menu" id="dropdownMenu">
             <a onclick="switchView('offerte')">🔥 Migliori Offerte</a>
@@ -275,8 +158,6 @@
     </header>
 
     <main class="container">
-        
-        <!-- VISTA OFFERTE -->
         <section id="view-offerte" class="view-section active">
             <div class="section-header">
                 <h2>🔥 Migliori Offerte</h2>
@@ -292,12 +173,10 @@
             </div>
         </section>
 
-        <!-- VISTA BLOG -->
         <section id="view-blog" class="view-section">
             <div class="section-header">
                 <h2>📝 Blog e Guide</h2>
             </div>
-            
             <div class="blog-filters" id="blog-filters">
                 <button class="filter-btn active" onclick="filterBlog('tutti')">Tutti</button>
                 <button class="filter-btn" onclick="filterBlog('Guide Pratiche')">Guide Pratiche</button>
@@ -307,11 +186,9 @@
                 <button class="filter-btn" onclick="filterBlog('Risparmio')">Risparmio</button>
                 <button class="filter-btn" onclick="filterBlog('App e Servizi')">App e Servizi</button>
             </div>
-
             <div id="blog-grid" class="blog-grid"></div>
         </section>
 
-        <!-- VISTA CONTATTI -->
         <section id="view-contatti" class="view-section">
             <div class="contact-box">
                 <h2>📧 Contattaci</h2>
@@ -319,7 +196,6 @@
                 <a href="mailto:info@risparmitop.it" class="offer-btn" style="max-width: 250px; margin: 0 auto;">Invia una Email</a>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -338,79 +214,17 @@
     </footer>
 
     <script>
-        // =========================
-        // ELENCO ARTICOLI DEL BLOG
-        // =========================
         const blogArticles = [
-            {
-                id: 1,
-                title: "Come risparmiare sull'assicurazione auto",
-                description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.",
-                category: "Guide Pratiche",
-                icon: "🚗",
-                link: "assicurazione-auto-risparmiare.html"
-            },
-            {
-                id: 2,
-                title: "BBVA conto corrente: pro, contro e bonus",
-                description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.",
-                category: "Finanza Personale",
-                icon: "💳",
-                link: "bbva-conto-corrente.html"
-            },
-            {
-                id: 3,
-                title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno",
-                description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.",
-                category: "Auto e Trasporti",
-                icon: "🚙",
-                link: "bollo-auto-2027.html"
-            },
-            {
-                id: 4,
-                title: "Budget familiare: come organizzarlo e risparmiare",
-                description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.",
-                category: "Finanza Personale",
-                icon: "👨‍‍👧",
-                link: "budget-familiare.html"
-            },
-            {
-                id: 5,
-                title: "IMU su affitto stanze: guida completa",
-                description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.",
-                category: "Casa e Tasse",
-                icon: "🏠",
-                link: "imu-affitto-stanze-abitazione-principale.html"
-            },
-            {
-                id: 6,
-                title: "Offerte Amazon: come riconoscere la vera convenienza",
-                description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.",
-                category: "Guide Pratiche",
-                icon: "📦",
-                link: "offerta-amazon-vera-convenienza.html"
-            },
-            {
-                id: 7,
-                title: "Sprechi invisibili: come eliminarli dalla tua vita",
-                description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.",
-                category: "Risparmio",
-                icon: "♻️",
-                link: "sprechi-invisibili.html"
-            },
-            {
-                id: 8,
-                title: "Vinted: come guadagnare con inviti e voucher",
-                description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.",
-                category: "App e Servizi",
-                icon: "👕",
-                link: "vinted-inviti-voucher.html"
-            }
+            { id: 1, title: "Come risparmiare sull'assicurazione auto", description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.", category: "Guide Pratiche", icon: "🚗", link: "assicurazione-auto-risparmiare.html" },
+            { id: 2, title: "BBVA conto corrente: pro, contro e bonus", description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.", category: "Finanza Personale", icon: "💳", link: "bbva-conto-corrente.html" },
+            { id: 3, title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno", description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.", category: "Auto e Trasporti", icon: "🚙", link: "bollo-auto-2027.html" },
+            { id: 4, title: "Budget familiare: come organizzarlo e risparmiare", description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.", category: "Finanza Personale", icon: "👨‍👩‍👧", link: "budget-familiare.html" },
+            { id: 5, title: "IMU su affitto stanze: guida completa", description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.", category: "Casa e Tasse", icon: "🏠", link: "imu-affitto-stanze-abitazione-principale.html" },
+            { id: 6, title: "Offerte Amazon: come riconoscere la vera convenienza", description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.", category: "Guide Pratiche", icon: "📦", link: "offerta-amazon-vera-convenienza.html" },
+            { id: 7, title: "Sprechi invisibili: come eliminarli dalla tua vita", description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.", category: "Risparmio", icon: "♻️", link: "sprechi-invisibili.html" },
+            { id: 8, title: "Vinted: come guadagnare con inviti e voucher", description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.", category: "App e Servizi", icon: "👕", link: "vinted-inviti-voucher.html" }
         ];
 
-        // =========================
-        // MENU A TENDINA
-        // =========================
         const menuToggle = document.getElementById('menuToggle');
         const dropdownMenu = document.getElementById('dropdownMenu');
         
@@ -423,13 +237,10 @@
         document.addEventListener('click', (e) => {
             if (!dropdownMenu.contains(e.target) && e.target !== menuToggle) {
                 dropdownMenu.classList.remove('active');
-                menuToggle.textContent = '';
+                menuToggle.textContent = '☰';
             }
         });
 
-        // =========================
-        // CAMBIO VISTA
-        // =========================
         function switchView(viewName) {
             document.querySelectorAll('.view-section').forEach(section => section.classList.remove('active'));
             const targetView = document.getElementById('view-' + viewName);
@@ -439,16 +250,10 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // =========================
-        // RENDERIZZAZIONE BLOG
-        // =========================
         function renderBlogArticles(filter = 'tutti') {
             const container = document.getElementById('blog-grid');
             container.innerHTML = '';
-
-            const filtered = filter === 'tutti' 
-                ? blogArticles 
-                : blogArticles.filter(article => article.category === filter);
+            const filtered = filter === 'tutti' ? blogArticles : blogArticles.filter(article => article.category === filter);
 
             if (filtered.length === 0) {
                 container.innerHTML = '<p style="text-align:center; color:#6b7280; grid-column: 1/-1; padding: 40px;">Nessun articolo in questa categoria.</p>';
@@ -483,9 +288,6 @@
             renderBlogArticles(category);
         }
 
-        // =========================
-        // SISTEMA OFFERTE CON PAGINAZIONE
-        // =========================
         let allOffers = [];
         const itemsPerPage = 60;
         let currentPage = 1;
@@ -525,9 +327,13 @@
             pageOffers.forEach(offer => {
                 const card = document.createElement("article");
                 card.className = "offer-card";
+                
+                // 🔥 SALVAGENTE: Se discount manca, lo calcola al volo!
+                const discountValue = offer.discount !== undefined ? offer.discount : Math.round((offer.old_price - offer.price) / offer.old_price * 100);
+
                 card.innerHTML = `
                     <div class="card-image-wrapper">
-                        <span class="discount-badge">-${offer.discount}%</span>
+                        <span class="discount-badge">-${discountValue}%</span>
                         <img src="${offer.image}" alt="${offer.name}" class="card-image" loading="lazy" onerror="this.src='https://placehold.co/600x400/f3f4f6/6b7280?text=RisparmiTop'">
                     </div>
                     <div class="card-body">
@@ -538,7 +344,7 @@
                             <span class="old-price">€${offer.old_price.toFixed(2)}</span>
                         </div>
                         <p class="card-description">${offer.description}</p>
-                        <a href="${offer.url}" target="_blank" rel="noopener noreferrer" class="offer-btn"> Vedi l'offerta</a>
+                        <a href="${offer.url}" target="_blank" rel="noopener noreferrer" class="offer-btn">👉 Vedi l'offerta</a>
                     </div>
                 `;
                 container.appendChild(card);
@@ -562,9 +368,6 @@
             }
         }
 
-        // =========================
-        // AVVIO
-        // =========================
         loadOffers();
         renderBlogArticles('tutti');
     </script>
