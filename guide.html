@@ -54,10 +54,11 @@
 
         h1 { line-height: 1.25; }
 
+        /* GRIGLIA A 2 COLONNE ANCHE SU MOBILE */
         .guides {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* 2 colonne sempre */
+            gap: 12px; /* Gap ridotto per mobile */
         }
 
         .guide {
@@ -78,28 +79,32 @@
 
         .guide-image {
             width: 100%;
-            height: 180px;
+            height: 140px; /* Altezza ridotta per mobile */
             object-fit: cover;
             background-color: #f3f4f6;
             display: block;
         }
 
         .guide-content {
-            padding: 18px;
+            padding: 12px; /* Padding ridotto per mobile */
         }
 
         .guide h2 {
-            font-size: 18px;
-            line-height: 1.35;
-            margin: 0 0 10px;
+            font-size: 14px; /* Titolo più compatto */
+            line-height: 1.3;
+            margin: 0 0 6px;
             color: #111827;
         }
 
         .guide p {
             margin: 0;
             color: #60656b;
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 12px; /* Testo più compatto */
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Max 3 righe di testo */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .back {
@@ -117,13 +122,20 @@
             font-size: 13px;
         }
 
+        /* ADATTAMENTO PER TABLET E PC */
         @media (min-width: 700px) {
-            .guides { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .guides { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 20px; 
+            }
             .guide-image { height: 200px; }
+            .guide-content { padding: 18px; }
+            .guide h2 { font-size: 18px; margin-bottom: 10px; }
+            .guide p { font-size: 14px; line-height: 1.5; -webkit-line-clamp: 4; }
         }
-
-        @media (max-width: 699px) {
-            .guide-image { height: 160px; }
+        
+        @media (min-width: 1024px) {
+            .guides { grid-template-columns: repeat(3, 1fr); } /* 3 colonne su schermi molto grandi */
         }
     </style>
 </head>
@@ -174,7 +186,7 @@
             <a class="guide" href="vinted-inviti-voucher.html">
                 <img src="immagini/vinted_inviti.jpg" alt="Vinted inviti" class="guide-image" loading="lazy">
                 <div class="guide-content">
-                    <h2>️ Vinted: dare una seconda vita agli oggetti</h2>
+                    <h2>♻️ Vinted: dare una seconda vita agli oggetti</h2>
                     <p>Vendere ciò che non serve più per recuperare valore e liberare spazio.</p>
                 </div>
             </a>
