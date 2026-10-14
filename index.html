@@ -478,5 +478,60 @@
         loadOffers();
         renderBlogArticles('tutti');
     </script>
+
+<!-- BANNER COOKIE -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                Questo sito utilizza cookie tecnici e statistici (Google Analytics) per migliorare la tua esperienza. 
+                Puoi leggere tutti i dettagli nella nostra 
+                <a href="cookie.html">Cookie Policy</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rifiuta</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accetta tutti</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gestione Cookie Banner
+        function initCookieBanner() {
+            const consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').classList.add('show');
+            } else if (consent === 'accepted') {
+                loadGoogleAnalytics();
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            loadGoogleAnalytics();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookie_consent', 'rejected');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        function loadGoogleAnalytics() {
+            // Carica Google Analytics solo dopo il consenso
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6';
+            document.head.appendChild(script);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-J8LMRVREH6');
+        }
+
+        // Avvia il banner al caricamento
+        initCookieBanner();
+    </script>
+
 </body>
 </html>
