@@ -15,8 +15,6 @@
   <meta property="og:url" content="https://www.risparmitop.it/vinted-inviti-voucher.html">
   <meta property="og:site_name" content="RisparmiTop">
 
-  <!-- Google Analytics verrà caricato SOLO dopo il consenso ai cookie -->
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,12 +113,20 @@
 
 <body>
 <header class="site-header">
-  <!-- MODIFICA: Il banner ora punta direttamente al tuo link di invito Vinted -->
-  <a href="https://bit.ly/4zmMQ4c" class="banner-link" aria-label="Iscriviti a Vinted con il link di invito" target="_blank" rel="noopener">
+  <!-- Banner 1: Istituzionale - punta alla home -->
+  <a href="https://www.risparmitop.it/" class="banner-link" aria-label="Torna alla home di RisparmiTop">
     <img src="immagini/banner-risparmitop.jpg"
          alt="RisparmiTop - Le migliori offerte, ogni giorno"
          width="1200" height="450"
          fetchpriority="high"
+         style="max-width: 100%; height: auto;">
+  </a>
+  
+  <!-- Banner 2: Vinted - punta al link di invito -->
+  <a href="https://bit.ly/4zmMQ4c" class="banner-link" aria-label="Iscriviti a Vinted con il link di invito" target="_blank" rel="noopener">
+    <img src="immagini/vinted_inviti.jpg"
+         alt="Vinted: iscriviti e guadagna con il programma inviti"
+         width="1200" height="450"
          style="max-width: 100%; height: auto;">
   </a>
 </header>
@@ -269,7 +275,7 @@
 
     <p>
       I voucher descritti dal regolamento scadono dopo 90 giorni.
-      La data esatta è consultabile nella sezione “I tuoi inviti”.
+      La data esatta è consultabile nella sezione "I tuoi inviti".
       In genere è possibile usare un solo voucher per ordine idoneo;
       restano esclusi i costi di spedizione, la Protezione acquisti
       e i servizi opzionali indicati da Vinted. I voucher non possono
@@ -320,7 +326,7 @@
   </p>
 </footer>
 
-<!-- BANNER COOKIE (Uguale alla home page per coerenza legale) -->
+<!-- BANNER COOKIE -->
 <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
         <div class="cookie-text">
@@ -336,7 +342,6 @@
 </div>
 
 <script>
-    // Gestione Cookie Banner (identica alla home page)
     function initCookieBanner() {
         const consent = localStorage.getItem('cookie_consent');
         if (!consent) {
@@ -369,7 +374,6 @@
         gtag('config', 'G-J8LMRVREH6');
     }
 
-    // Avvia il banner al caricamento
     initCookieBanner();
 </script>
 </body>
