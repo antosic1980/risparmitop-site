@@ -6,50 +6,12 @@
     <title>RisparmiTop - Le migliori offerte e guide per risparmiare</title>
     <meta name="description" content="RisparmiTop: offerte Amazon verificate, sconti esclusivi e guide pratiche per risparmiare meglio ogni giorno.">
     
+    <!-- Google Analytics verrà caricato SOLO dopo il consenso ai cookie -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-/* ========================= BANNER COOKIE ========================= */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #ffffff;
-            border-top: 2px solid #e5e7eb;
-            box-shadow: 0 -8px 30px rgba(0,0,0,0.1);
-            padding: 20px;
-            z-index: 9999;
-            display: none;
-            animation: slideUp 0.4s ease;
-        }
-        .cookie-banner.show { display: block; }
-        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-        
-        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-        @media (min-width: 768px) { .cookie-content { flex-direction: row; align-items: center; justify-content: space-between; } }
-        
-        .cookie-text { font-size: 14px; color: #374151; line-height: 1.5; }
-        .cookie-text a { color: #2563eb; font-weight: 600; }
-        
-        .cookie-buttons { display: flex; gap: 12px; flex-shrink: 0; }
-        .cookie-btn {
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-        }
-        .cookie-btn-accept { background: #111827; color: #ffffff; }
-        .cookie-btn-accept:hover { background: #2563eb; }
-        .cookie-btn-reject { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
-        .cookie-btn-reject:hover { background: #e5e7eb; }
-
-
-    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -133,12 +95,7 @@
         .load-more-btn { background: #ffffff; border: 2px solid #e5e7eb; color: #111827; font-weight: 700; font-size: 16px; padding: 16px 32px; border-radius: 999px; cursor: pointer; transition: all 0.2s; width: 100%; max-width: 400px; }
         .load-more-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
 
-        .blog-image-real {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background-color: #f3f4f6;
-        }
+        .blog-image-real { width: 100%; height: 180px; object-fit: cover; background-color: #f3f4f6; }
 
         .contact-box { text-align: center; padding: 50px 20px; background: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; }
         .contact-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
@@ -168,6 +125,44 @@
             .blog-card p { font-size: 12px; }
             .blog-category { font-size: 10px; }
         }
+
+        /* ========================= BANNER COOKIE ========================= */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 2px solid #e5e7eb;
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.1);
+            padding: 20px;
+            z-index: 9999;
+            display: none;
+            animation: slideUp 0.4s ease;
+        }
+        .cookie-banner.show { display: block; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+        @media (min-width: 768px) { .cookie-content { flex-direction: row; align-items: center; justify-content: space-between; } }
+        
+        .cookie-text { font-size: 14px; color: #374151; line-height: 1.5; }
+        .cookie-text a { color: #2563eb; font-weight: 600; }
+        
+        .cookie-buttons { display: flex; gap: 12px; flex-shrink: 0; }
+        .cookie-btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .cookie-btn-accept { background: #111827; color: #ffffff; }
+        .cookie-btn-accept:hover { background: #2563eb; }
+        .cookie-btn-reject { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+        .cookie-btn-reject:hover { background: #e5e7eb; }
     </style>
 </head>
 <body>
@@ -191,7 +186,7 @@
 
     <header class="header">
         <a href="#" onclick="switchView('offerte'); return false;" class="logo">Risparmi<span>Top</span></a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu"></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
         
         <nav class="dropdown-menu" id="dropdownMenu">
             <a onclick="switchView('offerte')">🔥 Migliori Offerte</a>
@@ -219,7 +214,7 @@
 
         <section id="view-blog" class="view-section">
             <div class="section-header">
-                <h2> Blog e Guide</h2>
+                <h2>📝 Blog e Guide</h2>
             </div>
             <div class="blog-filters" id="blog-filters">
                 <button class="filter-btn active" onclick="filterBlog('tutti')">Tutti</button>
@@ -257,81 +252,81 @@
         </p>
     </footer>
 
+    <!-- BANNER COOKIE -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                Questo sito utilizza cookie tecnici e statistici (Google Analytics) per migliorare la tua esperienza. 
+                Puoi leggere tutti i dettagli nella nostra 
+                <a href="cookie.html">Cookie Policy</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rifiuta</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accetta tutti</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        const blogArticles = [
-            {
-                id: 6,
-                title: "Offerte Amazon: come riconoscere la vera convenienza",
-                description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.",
-                category: "Guide Pratiche",
-                image: "immagini/offerte-amazon-convenienza.jpg",
-                link: "offerta-amazon-vera-convenienza.html"
-            },
-            {
-                id: 8,
-                title: "Vinted: come guadagnare con inviti e voucher",
-                description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.",
-                category: "App e Servizi",
-                image: "immagini/vinted-inviti-voucher.jpg",
-                link: "vinted-inviti-voucher.html"
-            },
-            {
-                id: 1,
-                title: "Come risparmiare sull'assicurazione auto",
-                description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.",
-                category: "Guide Pratiche",
-                image: "immagini/assicurazione-auto.jpg",
-                link: "assicurazione-auto-risparmiare.html"
-            },
-            {
-                id: 2,
-                title: "BBVA conto corrente: pro, contro e bonus",
-                description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.",
-                category: "Finanza Personale",
-                image: "immagini/conto-bbva-bonus.jpg",
-                link: "bbva-conto-corrente.html"
-            },
-            {
-                id: 3,
-                title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno",
-                description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.",
-                category: "Auto e Trasporti",
-                image: "immagini/bollo-auto-2027.jpg",
-                link: "bollo-auto-2027.html"
-            },
-            {
-                id: 4,
-                title: "Budget familiare: come organizzarlo e risparmiare",
-                description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.",
-                category: "Finanza Personale",
-                image: "immagini/budget-familiare.jpg",
-                link: "budget-familiare.html"
-            },
-            {
-                id: 5,
-                title: "IMU su affitto stanze: guida completa",
-                description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.",
-                category: "Casa e Tasse",
-                image: "immagini/imu-affitto-stanze.jpg",
-                link: "imu-affitto-stanze-abitazione-principale.html"
-            },
-            {
-                id: 7,
-                title: "Sprechi invisibili: come eliminarli dalla tua vita",
-                description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.",
-                category: "Risparmio",
-                image: "immagini/sprechi-invisibili.jpg",
-                link: "sprechi-invisibili.html"
+        // =========================
+        // GESTIONE COOKIE BANNER
+        // =========================
+        function initCookieBanner() {
+            const consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').classList.add('show');
+            } else if (consent === 'accepted') {
+                loadGoogleAnalytics();
             }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            loadGoogleAnalytics();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookie_consent', 'rejected');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6';
+            document.head.appendChild(script);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-J8LMRVREH6');
+        }
+
+        // =========================
+        // ELENCO ARTICOLI DEL BLOG
+        // =========================
+        const blogArticles = [
+            { id: 6, title: "Offerte Amazon: come riconoscere la vera convenienza", description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.", category: "Guide Pratiche", image: "immagini/offerte-amazon-convenienza.jpg", link: "offerta-amazon-vera-convenienza.html" },
+            { id: 8, title: "Vinted: come guadagnare con inviti e voucher", description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.", category: "App e Servizi", image: "immagini/vinted-inviti-voucher.jpg", link: "vinted-inviti-voucher.html" },
+            { id: 1, title: "Come risparmiare sull'assicurazione auto", description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.", category: "Guide Pratiche", image: "immagini/assicurazione-auto.jpg", link: "assicurazione-auto-risparmiare.html" },
+            { id: 2, title: "BBVA conto corrente: pro, contro e bonus", description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.", category: "Finanza Personale", image: "immagini/conto-bbva-bonus.jpg", link: "bbva-conto-corrente.html" },
+            { id: 3, title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno", description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.", category: "Auto e Trasporti", image: "immagini/bollo-auto-2027.jpg", link: "bollo-auto-2027.html" },
+            { id: 4, title: "Budget familiare: come organizzarlo e risparmiare", description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.", category: "Finanza Personale", image: "immagini/budget-familiare.jpg", link: "budget-familiare.html" },
+            { id: 5, title: "IMU su affitto stanze: guida completa", description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.", category: "Casa e Tasse", image: "immagini/imu-affitto-stanze.jpg", link: "imu-affitto-stanze-abitazione-principale.html" },
+            { id: 7, title: "Sprechi invisibili: come eliminarli dalla tua vita", description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.", category: "Risparmio", image: "immagini/sprechi-invisibili.jpg", link: "sprechi-invisibili.html" }
         ];
 
+        // =========================
+        // MENU A TENDINA
+        // =========================
         const menuToggle = document.getElementById('menuToggle');
         const dropdownMenu = document.getElementById('dropdownMenu');
         
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
-            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '☰';
+            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '';
         });
         
         document.addEventListener('click', (e) => {
@@ -341,6 +336,9 @@
             }
         });
 
+        // =========================
+        // CAMBIO VISTA
+        // =========================
         function switchView(viewName) {
             document.querySelectorAll('.view-section').forEach(section => section.classList.remove('active'));
             const targetView = document.getElementById('view-' + viewName);
@@ -350,6 +348,9 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // =========================
+        // RENDERIZZAZIONE BLOG
+        // =========================
         function renderBlogArticles(filter = 'tutti') {
             const container = document.getElementById('blog-grid');
             container.innerHTML = '';
@@ -388,6 +389,9 @@
             renderBlogArticles(category);
         }
 
+        // =========================
+        // SISTEMA OFFERTE CON PAGINAZIONE
+        // =========================
         let allOffers = [];
         const itemsPerPage = 60;
         let currentPage = 1;
@@ -467,63 +471,12 @@
             }
         }
 
+        // =========================
+        // AVVIO
+        // =========================
         loadOffers();
         renderBlogArticles('tutti');
-    </script>
-
-<!-- BANNER COOKIE -->
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                Questo sito utilizza cookie tecnici e statistici (Google Analytics) per migliorare la tua esperienza. 
-                Puoi leggere tutti i dettagli nella nostra 
-                <a href="cookie.html">Cookie Policy</a>.
-            </div>
-            <div class="cookie-buttons">
-                <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rifiuta</button>
-                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accetta tutti</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Gestione Cookie Banner
-        function initCookieBanner() {
-            const consent = localStorage.getItem('cookie_consent');
-            if (!consent) {
-                document.getElementById('cookie-banner').classList.add('show');
-            } else if (consent === 'accepted') {
-                loadGoogleAnalytics();
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookie_consent', 'accepted');
-            document.getElementById('cookie-banner').classList.remove('show');
-            loadGoogleAnalytics();
-        }
-
-        function rejectCookies() {
-            localStorage.setItem('cookie_consent', 'rejected');
-            document.getElementById('cookie-banner').classList.remove('show');
-        }
-
-        function loadGoogleAnalytics() {
-            // Carica Google Analytics solo dopo il consenso
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6';
-            document.head.appendChild(script);
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-J8LMRVREH6');
-        }
-
-        // Avvia il banner al caricamento
         initCookieBanner();
     </script>
-
 </body>
 </html>
