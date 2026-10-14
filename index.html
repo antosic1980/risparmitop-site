@@ -18,6 +18,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+/* ========================= BANNER COOKIE ========================= */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 2px solid #e5e7eb;
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.1);
+            padding: 20px;
+            z-index: 9999;
+            display: none;
+            animation: slideUp 0.4s ease;
+        }
+        .cookie-banner.show { display: block; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+        @media (min-width: 768px) { .cookie-content { flex-direction: row; align-items: center; justify-content: space-between; } }
+        
+        .cookie-text { font-size: 14px; color: #374151; line-height: 1.5; }
+        .cookie-text a { color: #2563eb; font-weight: 600; }
+        
+        .cookie-buttons { display: flex; gap: 12px; flex-shrink: 0; }
+        .cookie-btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .cookie-btn-accept { background: #111827; color: #ffffff; }
+        .cookie-btn-accept:hover { background: #2563eb; }
+        .cookie-btn-reject { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+        .cookie-btn-reject:hover { background: #e5e7eb; }
+
+
+    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
