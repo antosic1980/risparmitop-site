@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -45,40 +44,62 @@
             padding: 30px 16px 50px;
         }
 
-        .intro, .guide {
+        .intro {
             background: white;
             border: 1px solid #e5e7ea;
             border-radius: 14px;
             padding: 22px;
+            margin-bottom: 24px;
         }
-
-        .intro { margin-bottom: 24px; }
 
         h1 { line-height: 1.25; }
 
         .guides {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 14px;
+            gap: 20px;
         }
 
         .guide {
             text-decoration: none;
             display: block;
+            background: white;
+            border: 1px solid #e5e7ea;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .guide:hover { border-color: #0757a8; }
+        .guide:hover {
+            border-color: #0757a8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .guide-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #f3f4f6;
+            display: block;
+        }
+
+        .guide-content {
+            padding: 18px;
+        }
 
         .guide h2 {
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.35;
-            margin: 0 0 8px;
+            margin: 0 0 10px;
+            color: #111827;
         }
 
         .guide p {
             margin: 0;
             color: #60656b;
             font-size: 14px;
+            line-height: 1.5;
         }
 
         .back {
@@ -98,6 +119,11 @@
 
         @media (min-width: 700px) {
             .guides { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .guide-image { height: 200px; }
+        }
+
+        @media (max-width: 699px) {
+            .guide-image { height: 160px; }
         }
     </style>
 </head>
@@ -106,16 +132,17 @@
     <header class="site-header">
         <a href="https://www.risparmitop.it/" aria-label="Torna alla homepage">
             <img
-                src="immagini/banner-risparmitop.png"
+                src="immagini/banner-risparmitop.jpg"
                 alt="RisparmiTop - Le migliori offerte e il risparmio intelligente"
-                width="1536"
-                height="576"
+                width="1200"
+                height="450"
+                style="max-width: 100%; height: auto;"
             >
         </a>
     </header>
 
     <main>
-        <a class="back" href="index.html">← Torna alle offerte</a>
+        <a class="back" href="index.html">← Torna alla home</a>
 
         <section class="intro">
             <h1>Guide e consigli per risparmiare</h1>
@@ -129,43 +156,67 @@
         <section class="guides">
 
             <a class="guide" href="assicurazione-auto-risparmiare.html">
-                <h2>🚗 Assicurazione auto: come risparmiare</h2>
-                <p>Strategie per contenere il costo della polizza senza rinunciare alla protezione.</p>
+                <img src="immagini/assicurazione-auto.jpg" alt="Assicurazione auto" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>🚗 Assicurazione auto: come risparmiare</h2>
+                    <p>Strategie per contenere il costo della polizza senza rinunciare alla protezione.</p>
+                </div>
             </a>
 
             <a class="guide" href="bbva-conto-corrente.html">
-                <h2>🏦 Conto BBVA e promozioni</h2>
-                <p>Informazioni sul conto corrente e sulle iniziative promozionali.</p>
+                <img src="immagini/conto-bbva.jpg" alt="Conto BBVA" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>🏦 Conto BBVA e promozioni</h2>
+                    <p>Informazioni sul conto corrente e sulle iniziative promozionali.</p>
+                </div>
             </a>
 
             <a class="guide" href="vinted-inviti-voucher.html">
-                <h2>♻️ Vinted: dare una seconda vita agli oggetti</h2>
-                <p>Vendere ciò che non serve più per recuperare valore e liberare spazio.</p>
+                <img src="immagini/vinted_inviti.jpg" alt="Vinted inviti" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>️ Vinted: dare una seconda vita agli oggetti</h2>
+                    <p>Vendere ciò che non serve più per recuperare valore e liberare spazio.</p>
+                </div>
             </a>
 
             <a class="guide" href="bollo-auto-2027.html">
-                <h2>🚘 Bollo auto 2027</h2>
-                <p>Una guida sulle condizioni e sulle regole da verificare per le eventuali esenzioni.</p>
+                <img src="immagini/bollo-auto.jpg" alt="Bollo auto" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>🚘 Bollo auto 2027</h2>
+                    <p>Una guida sulle condizioni e sulle regole da verificare per le eventuali esenzioni.</p>
+                </div>
             </a>
 
             <a class="guide" href="offerta-amazon-vera-convenienza.html">
-                <h2>🛒 Come riconoscere una vera offerta Amazon</h2>
-                <p>Prezzo storico, sconti e controlli utili prima di acquistare.</p>
+                <img src="immagini/offerte-amazon.jpg" alt="Offerte Amazon" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>🛒 Come riconoscere una vera offerta Amazon</h2>
+                    <p>Prezzo storico, sconti e controlli utili prima di acquistare.</p>
+                </div>
             </a>
 
             <a class="guide" href="imu-affitto-stanze-abitazione-principale.html">
-                <h2>🏠 IMU e affitto di una stanza</h2>
-                <p>Le situazioni da valutare per capire se resta applicabile l'esenzione.</p>
+                <img src="immagini/imu-affitto.jpg" alt="IMU affitto stanze" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>🏠 IMU e affitto di una stanza</h2>
+                    <p>Le situazioni da valutare per capire se resta applicabile l'esenzione.</p>
+                </div>
             </a>
 
             <a class="guide" href="sprechi-invisibili.html">
-                <h2>Gli sprechi invisibili nel bilancio familiare</h2>
-                <p>Piccole spese e abitudini che possono pesare senza farsi notare.</p>
+                <img src="immagini/sprechi-invisibili.jpg" alt="Sprechi invisibili" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>💡 Gli sprechi invisibili nel bilancio familiare</h2>
+                    <p>Piccole spese e abitudini che possono pesare senza farsi notare.</p>
+                </div>
             </a>
 
             <a class="guide" href="budget-familiare.html">
-                <h2>Come organizzare il budget familiare</h2>
-                <p>Un metodo pratico per gestire le spese senza sentirsi prigionieri dei numeri.</p>
+                <img src="immagini/budget-familiare.jpg" alt="Budget familiare" class="guide-image" loading="lazy">
+                <div class="guide-content">
+                    <h2>📊 Come organizzare il budget familiare</h2>
+                    <p>Un metodo pratico per gestire le spese senza sentirsi prigionieri dei numeri.</p>
+                </div>
             </a>
 
         </section>
