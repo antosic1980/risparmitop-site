@@ -54,48 +54,35 @@
         .section-header h2 { font-size: 22px; font-weight: 800; color: #111827; letter-spacing: -0.5px; }
         .view-all { font-size: 14px; font-weight: 600; color: #2563eb; }
 
-        .blog-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
-        .filter-btn { background: #ffffff; border: 1px solid #e5e7eb; color: #374151; font-weight: 600; font-size: 13px; padding: 8px 16px; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
-        .filter-btn:hover { background: #f3f4f6; }
-        .filter-btn.active { background: #111827; color: #ffffff; border-color: #111827; }
+        .offers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        @media (min-width: 1024px) { .offers-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
 
-        .offers-grid, .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        @media (min-width: 1024px) { .offers-grid, .blog-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
-
-        .offer-card, .blog-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; height: 100%; }
-        .offer-card:hover, .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); border-color: #d1d5db; }
+        .offer-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; height: 100%; }
+        .offer-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); border-color: #d1d5db; }
 
         .card-image-wrapper { position: relative; height: 200px; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 20px; border-bottom: 1px solid #f3f4f6; }
         .card-image { max-width: 100%; max-height: 100%; object-fit: contain; }
         
         .discount-badge { position: absolute; top: 12px; left: 12px; background: #dc2626; color: #ffffff; font-weight: 800; font-size: 14px; padding: 6px 10px; border-radius: 8px; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25); }
 
-        .card-body, .blog-content { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+        .card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
         
-        .store-tag, .blog-category { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content; }
-        .store-tag { background: #f3f4f6; color: #374151; }
-        .blog-category { background: #eff6ff; color: #2563eb; }
+        .store-tag { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; width: fit-content; background: #f3f4f6; color: #374151; }
 
-        .card-title, .blog-card h3 { font-size: 16px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .blog-card h3 { font-size: 18px; -webkit-line-clamp: 3; margin-bottom: 10px; }
+        .card-title { font-size: 16px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; color: #111827; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
         .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
         .new-price { font-size: 26px; font-weight: 800; color: #111827; }
         .old-price { font-size: 14px; color: #9ca3af; text-decoration: line-through; }
 
-        .card-description, .blog-card p { font-size: 13px; color: #6b7280; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
-        .blog-card p { font-size: 14px; -webkit-line-clamp: 3; line-height: 1.6; }
+        .card-description { font-size: 13px; color: #6b7280; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5; }
 
-        .offer-btn, .read-more { display: block; text-align: center; background: #111827; color: #ffffff; font-weight: 700; font-size: 15px; padding: 14px; border-radius: 10px; transition: background 0.2s, transform 0.1s; margin-top: auto; }
-        .offer-btn:hover, .read-more:hover { background: #2563eb; color: #ffffff; transform: translateY(-1px); }
-        .read-more { background: transparent; color: #2563eb; padding: 0; text-align: left; font-size: 14px; }
-        .read-more:hover { background: transparent; color: #2563eb; transform: none; }
+        .offer-btn { display: block; text-align: center; background: #111827; color: #ffffff; font-weight: 700; font-size: 15px; padding: 14px; border-radius: 10px; transition: background 0.2s, transform 0.1s; margin-top: auto; }
+        .offer-btn:hover { background: #2563eb; color: #ffffff; transform: translateY(-1px); }
 
         .load-more-container { text-align: center; margin-top: 40px; }
         .load-more-btn { background: #ffffff; border: 2px solid #e5e7eb; color: #111827; font-weight: 700; font-size: 16px; padding: 16px 32px; border-radius: 999px; cursor: pointer; transition: all 0.2s; width: 100%; max-width: 400px; }
         .load-more-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
-
-        .blog-image-real { width: 100%; height: 180px; object-fit: cover; background-color: #f3f4f6; }
 
         .contact-box { text-align: center; padding: 50px 20px; background: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; }
         .contact-box h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
@@ -119,11 +106,6 @@
             .offer-btn { font-size: 13px; padding: 10px; }
             .discount-badge { font-size: 12px; padding: 4px 8px; top: 8px; left: 8px; }
             .store-tag { font-size: 10px; padding: 3px 6px; }
-            .blog-image-real { height: 130px; }
-            .blog-content { padding: 12px; }
-            .blog-card h3 { font-size: 14px; }
-            .blog-card p { font-size: 12px; }
-            .blog-category { font-size: 10px; }
         }
 
         /* ========================= BANNER COOKIE ========================= */
@@ -189,10 +171,10 @@
         <button class="menu-toggle" id="menuToggle" aria-label="Apri menu">☰</button>
         
         <nav class="dropdown-menu" id="dropdownMenu">
-            <a onclick="switchView('offerte')">🔥 Migliori Offerte</a>
-            <a onclick="switchView('blog')">📝 Blog e Guide</a>
+            <a onclick="switchView('offerte')"> Migliori Offerte</a>
+            <a href="guide.html">📝 Blog e Guide</a>
             <a onclick="switchView('contatti')">📧 Contatti</a>
-            <a href="https://t.me/risparmitop" target="_blank" rel="noopener">📲 Canale Telegram</a>
+            <a href="https://t.me/risparmitop" target="_blank" rel="noopener"> Canale Telegram</a>
         </nav>
     </header>
 
@@ -210,22 +192,6 @@
                     Carica altre 60 offerte ↓
                 </button>
             </div>
-        </section>
-
-        <section id="view-blog" class="view-section">
-            <div class="section-header">
-                <h2>📝 Blog e Guide</h2>
-            </div>
-            <div class="blog-filters" id="blog-filters">
-                <button class="filter-btn active" onclick="filterBlog('tutti')">Tutti</button>
-                <button class="filter-btn" onclick="filterBlog('Guide Pratiche')">Guide Pratiche</button>
-                <button class="filter-btn" onclick="filterBlog('Finanza Personale')">Finanza</button>
-                <button class="filter-btn" onclick="filterBlog('Casa e Tasse')">Casa e Tasse</button>
-                <button class="filter-btn" onclick="filterBlog('Auto e Trasporti')">Auto</button>
-                <button class="filter-btn" onclick="filterBlog('Risparmio')">Risparmio</button>
-                <button class="filter-btn" onclick="filterBlog('App e Servizi')">App e Servizi</button>
-            </div>
-            <div id="blog-grid" class="blog-grid"></div>
         </section>
 
         <section id="view-contatti" class="view-section">
@@ -304,20 +270,6 @@
         }
 
         // =========================
-        // ELENCO ARTICOLI DEL BLOG
-        // =========================
-        const blogArticles = [
-            { id: 6, title: "Offerte Amazon: come riconoscere la vera convenienza", description: "Trucchi e strumenti per verificare se un'offerta Amazon è davvero conveniente: storico prezzi, comparatori e segnali da non sottovalutare.", category: "Guide Pratiche", image: "immagini/offerte-amazon-convenienza.jpg", link: "offerta-amazon-vera-convenienza.html" },
-            { id: 8, title: "Vinted: come guadagnare con inviti e voucher", description: "Strategie per massimizzare i guadagni su Vinted: programma inviti, codici sconto, vendita efficace e trucchi per vendere più velocemente.", category: "App e Servizi", image: "immagini/vinted-inviti-voucher.jpg", link: "vinted-inviti-voucher.html" },
-            { id: 1, title: "Come risparmiare sull'assicurazione auto", description: "Guida completa per confrontare le polizze, sfruttare la legge Bersani e ottenere il premio RC Auto più basso possibile senza rinunciare alle garanzie.", category: "Guide Pratiche", image: "immagini/assicurazione-auto.jpg", link: "assicurazione-auto-risparmiare.html" },
-            { id: 2, title: "BBVA conto corrente: pro, contro e bonus", description: "Analisi dettagliata del conto corrente online BBVA: zero spese, bonifici gratuiti, cashback e come ottenere il bonus di benvenuto per i nuovi clienti.", category: "Finanza Personale", image: "immagini/conto-bbva-bonus.jpg", link: "bbva-conto-corrente.html" },
-            { id: 3, title: "Bollo auto 2027: calcolo, esenzioni e come pagare meno", description: "Tutto quello che devi sapere sul bollo auto 2027: come si calcola, quali sono le esenzioni regionali, le agevolazioni per auto elettriche e ibride.", category: "Auto e Trasporti", image: "immagini/bollo-auto-2027.jpg", link: "bollo-auto-2027.html" },
-            { id: 4, title: "Budget familiare: come organizzarlo e risparmiare", description: "Metodi pratici per creare un budget familiare efficace, tenere traccia delle spese e mettere da parte ogni mese senza sacrifici eccessivi.", category: "Finanza Personale", image: "immagini/budget-familiare.jpg", link: "budget-familiare.html" },
-            { id: 5, title: "IMU su affitto stanze: guida completa", description: "Come funziona l'IMU per chi affitta stanze o appartamenti, aliquote, detrazioni, cedolare secca e tutto ciò che serve per essere in regola.", category: "Casa e Tasse", image: "immagini/imu-affitto-stanze.jpg", link: "imu-affitto-stanze-abitazione-principale.html" },
-            { id: 7, title: "Sprechi invisibili: come eliminarli dalla tua vita", description: "Abbonamenti dimenticati, acquisti impulsivi, piccoli sprechi quotidiani: scopri come identificarli e recuperare centinaia di euro ogni anno.", category: "Risparmio", image: "immagini/sprechi-invisibili.jpg", link: "sprechi-invisibili.html" }
-        ];
-
-        // =========================
         // MENU A TENDINA
         // =========================
         const menuToggle = document.getElementById('menuToggle');
@@ -326,7 +278,7 @@
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdownMenu.classList.toggle('active');
-            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '✕' : '';
+            menuToggle.textContent = dropdownMenu.classList.contains('active') ? '' : '☰';
         });
         
         document.addEventListener('click', (e) => {
@@ -346,47 +298,6 @@
             dropdownMenu.classList.remove('active');
             menuToggle.textContent = '☰';
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // =========================
-        // RENDERIZZAZIONE BLOG
-        // =========================
-        function renderBlogArticles(filter = 'tutti') {
-            const container = document.getElementById('blog-grid');
-            container.innerHTML = '';
-            const filtered = filter === 'tutti' ? blogArticles : blogArticles.filter(article => article.category === filter);
-
-            if (filtered.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:#6b7280; grid-column: 1/-1; padding: 40px;">Nessun articolo in questa categoria.</p>';
-                return;
-            }
-
-            filtered.forEach(article => {
-                const card = document.createElement('article');
-                card.className = 'blog-card';
-                card.innerHTML = `
-                    <a href="${article.link}">
-                        <img src="${article.image}" alt="${article.title}" class="blog-image-real" loading="lazy">
-                        <div class="blog-content">
-                            <span class="blog-category">${article.category}</span>
-                            <h3>${article.title}</h3>
-                            <p>${article.description}</p>
-                            <span class="read-more">Leggi tutto →</span>
-                        </div>
-                    </a>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        function filterBlog(category) {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent.includes(category) || (category === 'tutti' && btn.textContent === 'Tutti')) {
-                    btn.classList.add('active');
-                }
-            });
-            renderBlogArticles(category);
         }
 
         // =========================
@@ -475,7 +386,6 @@
         // AVVIO
         // =========================
         loadOffers();
-        renderBlogArticles('tutti');
         initCookieBanner();
     </script>
 </body>
