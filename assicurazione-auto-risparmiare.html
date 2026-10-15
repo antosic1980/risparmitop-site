@@ -3,16 +3,6 @@
 
 <head>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-J8LMRVREH6');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -95,7 +85,7 @@
             "url": "https://risparmitop.it/"
         },
         "datePublished": "2026-10-08",
-        "dateModified": "2026-10-08",
+        "dateModified": "2026-10-15",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://risparmitop.it/assicurazione-auto-risparmiare.html"
@@ -299,6 +289,30 @@
             }
         }
 
+        /* ========================= BANNER COOKIE ========================= */
+        .cookie-banner {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: #ffffff; border-top: 2px solid #e5e7eb;
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.1);
+            padding: 20px; z-index: 9999; display: none;
+            animation: slideUp 0.4s ease;
+        }
+        .cookie-banner.show { display: block; }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .cookie-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+        @media (min-width: 768px) { .cookie-content { flex-direction: row; align-items: center; justify-content: space-between; } }
+        .cookie-text { font-size: 14px; color: #374151; line-height: 1.5; }
+        .cookie-text a { color: #2563eb; font-weight: 600; }
+        .cookie-buttons { display: flex; gap: 12px; flex-shrink: 0; }
+        .cookie-btn {
+            padding: 12px 24px; border-radius: 10px; font-weight: 700; font-size: 14px;
+            cursor: pointer; border: none; transition: all 0.2s;
+        }
+        .cookie-btn-accept { background: #111827; color: #ffffff; }
+        .cookie-btn-accept:hover { background: #2563eb; }
+        .cookie-btn-reject { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+        .cookie-btn-reject:hover { background: #e5e7eb; }
+
     </style>
 
 </head>
@@ -306,20 +320,26 @@
 <body>
 
     <header class="site-header">
-
-        <a
-            href="index.html"
-            class="banner-link"
-            aria-label="Torna alla home di RisparmiTop"
-        >
+        <!-- Banner 1: Istituzionale (porta alla home) -->
+        <a href="index.html" class="banner-link" aria-label="Torna alla home di RisparmiTop">
             <img
-                src="immagini/banner-risparmitop.png"
+                src="immagini/banner-risparmitop.jpg"
                 alt="RisparmiTop - Le migliori offerte, ogni giorno"
                 width="1536"
                 height="576"
+                style="max-width: 100%; height: auto;"
             >
         </a>
-
+        <!-- Banner 2: Specifico dell'articolo -->
+        <a href="assicurazione-auto-risparmiare.html" class="banner-link" aria-label="Guida assicurazione auto">
+            <img
+                src="immagini/assicurazione-auto.jpg"
+                alt="Come risparmiare sull'assicurazione auto"
+                width="1536"
+                height="576"
+                style="max-width: 100%; height: auto;"
+            >
+        </a>
     </header>
 
 
@@ -895,6 +915,58 @@
         © 2026 RisparmiTop — Il risparmio intelligente per la vita di ogni giorno.
     </footer>
 
-</body>
+    <!-- =========================================================
+         BANNER COOKIE (GDPR)
+         ========================================================= -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                Questo sito utilizza cookie tecnici e statistici (Google Analytics) per migliorare la tua esperienza. 
+                Puoi leggere tutti i dettagli nella nostra 
+                <a href="cookie.html">Cookie Policy</a>.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-reject" onclick="rejectCookies()">Rifiuta</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accetta tutti</button>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        function initCookieBanner() {
+            const consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').classList.add('show');
+            } else if (consent === 'accepted') {
+                loadGoogleAnalytics();
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            loadGoogleAnalytics();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookie_consent', 'rejected');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-J8LMRVREH6';
+            document.head.appendChild(script);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-J8LMRVREH6');
+        }
+
+        initCookieBanner();
+    </script>
+
+</body>
 </html>
