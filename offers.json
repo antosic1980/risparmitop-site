@@ -1,5 +1,18 @@
 [
   {
+    "id": "B0FKN1RM1N",
+    "name": "Sony INZONE H9 II",
+    "url": "https://www.amazon.it/dp/B0FKN1RM1N/",
+    "old_price": 329.61,
+    "price": 199.0,
+    "discount": 40,
+    "category": "Elettronica",
+    "description": "Cuffie da gaming wireless con cancellazione del rumore – Audio spaziale a 360°, Microfono con riduzione del rumore, Batteria da 30 ore, Design leggero, Bluetooth Cablato, PC – Black",
+    "formatted_date": "17/10/2026 alle ore 12:16",
+    "timestamp": 1792232200.998705,
+    "image": "https://placehold.co/600x400/e2e8f0/1e293b?text=RisparmiTop"
+  },
+  {
     "id": "B09B2S8WKD",
     "name": "Echo Show 5 (Ultimo modello) | Schermo touch intelligente e compatto: controllo della Casa Intelligente e molto altro | Antracite, con Accesso",
     "url": "https://www.amazon.it/dp/B09B2S8WKD/",
@@ -18,5 +31,23 @@
     "category": "Elettronica",
     "description": "Auricolari wireless Sony compatti e leggeri, progettati per offrire un audio di qualità con tecnologia DSEE. Pesano solo 4,6 g per auricolare e offrono fino a 22 ore di autonomia complessiva. Supportano la connessione Multipoint per collegare contemporaneamente due dispositivi. Il design ergonomico li rende adatti anche all'uso durante l'attività fisica.",
     "date": "2026-09-28T00:10:03+02:00"
+  },
+  {
+    "id": "580aae18-990e-4fd2-86c2-30fd2a93ceb4",
+    "name": "TEST RisparmiTop",
+    "old_price": 100.0,
+    "price": 90.0,
+    "category": "Test",
+    "description": "Offerta di prova per verificare il nuovo sistema",
+    "url": "https://www.amazon.it/"
+  },
+  {
+    "id": "de572849-4590-43e2-9b82-73d4caffb5f5",
+    "name": "TEST RisparmiTop",
+    "old_price": 100.0,
+    "price": 90.0,
+    "category": "Test",
+    "description": "Offerta di prova",
+    "url": "https://www.amazon.it/"
   }
 ]
