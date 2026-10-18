@@ -1,5 +1,18 @@
 [
   {
+    "id": "B0GNMXTZ77",
+    "name": "Oral-B Testine di Ricambio, Cross Action, Nere, 16 Ricambi",
+    "url": "https://www.amazon.it/dp/B0GNMXTZ77/",
+    "old_price": 56.8,
+    "price": 32.97,
+    "discount": 42,
+    "category": "Igiene della persona",
+    "description": "16 Testine di Ricambio per Spazzolino Elettrico, Autentiche, Setole Angolate si Adattano a ogni Dente per Pulizia Profonda",
+    "formatted_date": "18/10/2026 alle ore 04:17",
+    "timestamp": 1792289843.737612,
+    "image": "https://placehold.co/600x400/e2e8f0/1e293b?text=RisparmiTop"
+  },
+  {
     "id": "B0FKN1RM1N",
     "name": "Sony INZONE H9 II",
     "url": "https://www.amazon.it/dp/B0FKN1RM1N/",
@@ -31,5 +44,23 @@
     "category": "Elettronica",
     "description": "Auricolari wireless Sony compatti e leggeri, progettati per offrire un audio di qualità con tecnologia DSEE. Pesano solo 4,6 g per auricolare e offrono fino a 22 ore di autonomia complessiva. Supportano la connessione Multipoint per collegare contemporaneamente due dispositivi. Il design ergonomico li rende adatti anche all'uso durante l'attività fisica.",
     "date": "2026-09-28T00:10:03+02:00"
+  },
+  {
+    "id": "580aae18-990e-4fd2-86c2-30fd2a93ceb4",
+    "name": "TEST RisparmiTop",
+    "old_price": 100.0,
+    "price": 90.0,
+    "category": "Test",
+    "description": "Offerta di prova per verificare il nuovo sistema",
+    "url": "https://www.amazon.it/"
+  },
+  {
+    "id": "de572849-4590-43e2-9b82-73d4caffb5f5",
+    "name": "TEST RisparmiTop",
+    "old_price": 100.0,
+    "price": 90.0,
+    "category": "Test",
+    "description": "Offerta di prova",
+    "url": "https://www.amazon.it/"
   }
 ]
